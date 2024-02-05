@@ -9,25 +9,33 @@ const SignInForm = () => {
 
     const username = event.target.username.value;
     dispatch(setUsername(username));
+    event.target.reset();
   };
 
   return (
     <div className="h-[100vh] border flex justify-center items-center">
-      <h1>Sign In</h1>
+      <div>
+        <h1 className="text-3xl font-medium mb-4">Sign In</h1>
 
-      <form onSubmit={handleSubmit}>
-        <div className="border mt-4">
-          <input
-            type="text"
-            className="rounded p-2"
-            name="username"
-            id="username"
-          />
-        </div>
-        <div className="border-2 mt-4">
-          <button type="submit">Sign in</button>
-        </div>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <div className="mt-4">
+            <input
+              type="text"
+              className="rounded p-2 px-4 border"
+              name="username"
+              id="username"
+            />
+          </div>
+          <div className="mt-4">
+            <button
+              type="submit"
+              className="py-2 px-4 rounded bg-primary-green text-white"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
