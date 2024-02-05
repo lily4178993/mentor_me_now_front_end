@@ -12,7 +12,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div>
+    <div className="h-[100vh] border flex justify-center items-center">
       <h1>Sign In</h1>
 
       <form onSubmit={handleSubmit}>

@@ -1,4 +1,3 @@
-import './App.css';
 import SignInForm from './components/SignInForm';
 
 function App() {
