@@ -4,14 +4,15 @@ import Home from './pages/Home';
 import ReserveMentor from './components/ReserveMentor';
 import Reservations from './components/Reservations';
 import AddMentor from './components/AddMentor';
-import DeleteMentor from './components/DeleteMentor';
+import Delete from './components/Delete';
 import NavBar from './components/Navbar';
+import './App.css';
 
 function App() {
   const location = useLocation();
 
   return (
-    <>
+    <div className="App">
       {location.pathname !== '/' && <NavBar />}
       <main>
         <Routes>
@@ -20,10 +21,10 @@ function App() {
           <Route path="/reserveMentor" element={<ReserveMentor />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/addMentor" element={<AddMentor />} />
-          <Route path="/deleteMentor" element={<DeleteMentor />} />
+          <Route path="/delete" element={<Delete />} />
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 
