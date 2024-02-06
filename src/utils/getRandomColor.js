@@ -32,7 +32,6 @@ const getRandomColor = () => {
       'primary-red',
     ];
   }
-
   return selectedColor;
 };
 
