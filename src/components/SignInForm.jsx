@@ -13,7 +13,7 @@ const SignInForm = () => {
     dispatch(setUsername(username));
     event.target.reset();
 
-    navigate('/mainpage');
+    navigate('/home');
   };
 
   return (

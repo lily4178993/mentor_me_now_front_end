@@ -1,13 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import SignInForm from './components/SignInForm';
-import MainPage from './components/mainPage';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<SignInForm />} />
-      <Route path="/mainpage" element={<MainPage />} />
-    </Routes>
+    <main>
+      <Routes>
+        <Route path="/" element={<SignInForm />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </main>
   );
 }
 
