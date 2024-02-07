@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const MentorCard = ({
   name, image, about, backgroundColor,
 }) => (
-  <div className="bg-white h-[420px] text-primary-black my-4">
+  <div className="bg-white h-[420px] shadow text-primary-black my-4">
     <div className="h-36 mx-2 flex justify-center items-center relative">
       <div className={`h-36 w-36 rounded-full bg-${backgroundColor}`}>
         <img

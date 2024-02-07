@@ -62,9 +62,9 @@ const Home = () => {
   };
 
   return (
-    <section className="border-2 h-full w-full border-green-500">
+    <section className=" h-full w-full border-green-500 pt-[5rem]">
       <div className="border text-center">
-        <h1 className="uppercase font-medium">Meet Our best Mentors</h1>
+        <h1 className="uppercase text-4xl font-medium">Meet Our best Mentors</h1>
         <p className="text-xs mt-4">Please select a Mentor</p>
         <div className="w-1/6 mx-auto mt-8 border-0 border-t-[2px] border-t-primary-gray/50 border-dotted">
           {' '}

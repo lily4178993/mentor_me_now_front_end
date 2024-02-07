@@ -13,9 +13,9 @@ function App() {
   const location = useLocation();
 
   return (
-    <main className="border-2 w-full h-auto md:h-[100vh] flex justify-start items-start border-blue-500">
+    <main className="w-full h-auto md:h-[100vh] flex justify-start items-start border-blue-500">
       {location.pathname !== '/' && <NavBar />}
-      <section className="border-4 border-red-500 h-full lg:w-[80%]">
+      <section className="border-red-500 h-full lg:w-[80%]">
         <Routes>
           <Route path="/" element={<SignInForm />} />
           <Route path="/mentors" element={<Home />} />
