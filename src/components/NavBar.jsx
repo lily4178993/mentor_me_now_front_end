@@ -8,11 +8,11 @@ import instagram from '../assets/instagram.svg';
 import pinterest from '../assets/pinterest.svg';
 
 const NavBar = () => (
-  <nav className="navbar">
+  <nav className="basis-[20%]">
     <img src={logo} alt="logo" className="logo" />
     <ul className="navbar_links">
       <li>
-        <NavLink to="/home" className={({ isActive }) => (isActive ? 'active_box' : '')}>
+        <NavLink to="/mentors" className={({ isActive }) => (isActive ? 'active_box' : '')}>
           Mentors
         </NavLink>
       </li>
