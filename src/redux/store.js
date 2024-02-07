@@ -6,6 +6,7 @@ import authReducer from './slices/auth/authSlice';
  * Redux store configured with the mentor reducer.
  * @type {Store}
  */
+
 const store = configureStore({
   reducer: {
     mentor: mentorReducer,

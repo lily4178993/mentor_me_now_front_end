@@ -61,8 +61,8 @@ const Home = () => {
   };
 
   return (
-    <>
-      <div className="border-2">
+    <section className="w-3/4 m-auto">
+      <div>
         <h1 className="uppercase font-extrabold">Ours best Mentors</h1>
         <p className="text-xs -mt-4">Please select a Mentor</p>
         <div className="w-1/6 mx-auto mt-8 border-0 border-t-[2px] border-t-primary-gray/50 border-dotted">
@@ -112,7 +112,7 @@ const Home = () => {
           )}
         </div>
       )}
-    </>
+    </section>
   );
 };
 
