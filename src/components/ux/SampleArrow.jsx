@@ -19,7 +19,7 @@ const SampleArrow = (props) => {
     nextArrow: {
       display: 'block',
       background: '#97BF0F',
-      padding: '15px 30px 15px 10px',
+      padding: '15px 30px 30px 10px',
       borderTopLeftRadius: '50%',
       borderBottomLeftRadius: '50%',
       zIndex: 10,
@@ -27,7 +27,7 @@ const SampleArrow = (props) => {
     prevArrow: {
       display: 'block',
       background: '#BCBCBE',
-      padding: '15px 10px 15px 30px',
+      padding: '15px 30px 30px 10px',
       borderTopRightRadius: '50%',
       borderBottomRightRadius: '50%',
       zIndex: 10,
