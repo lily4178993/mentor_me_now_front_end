@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+// import { createSlice } from '@reduxjs/toolkit';
 
-const addMentorSlice = createSlice({
-    name: 'addMentor',
-    
-});
+// const addMentorSlice = createSlice({
+//   name: 'addMentor',
+
+// });
