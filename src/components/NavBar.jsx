@@ -37,11 +37,11 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="basis-[20%] h-full shadow-md">
-      <div className="flex justify-start items-center">
+    <nav className="basis-[20%] h-full shadow-md flex flex-col justify-between items-center">
+      <div className="flex w-full justify-start items-center">
         <img src={logo} alt="logo" className="logo" />
       </div>
-      <ul className="navbar_links lg:pl-6">
+      <ul className="navbar_links lg:pl-6 w-full">
         {navlinkData.map((link) => (
           <li key={link.id} className="border-b uppercase font-bold text-[#111111] p-0">
             <NavLink
@@ -55,8 +55,7 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-
-      <div className="social_media">
+      <div className="social_media w-full">
         <img src={twitter} alt="twitter logo" />
         <img src={facebook} alt="facebook logo" />
         <img src={google} alt="google logo" />
