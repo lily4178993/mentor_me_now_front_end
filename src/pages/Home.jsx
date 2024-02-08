@@ -61,7 +61,7 @@ const Home = () => {
   };
 
   return (
-    <section className="w-[100%] flex flex-col justify-start h-full py-[3rem] border-orange-500 m-auto">
+    <section className="w-[100%] flex flex-col justify-start h-full py-[7rem] border-orange-500 m-auto">
       <Header />
       {status === 'loading' && <LoadingStatus />}
       {status === 'failed' && <ErrorStatus error={error} />}

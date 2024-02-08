@@ -16,7 +16,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="h-[100vh] w-full flex justify-center items-center">
+    <div className="h-[100vh] border w-full flex justify-center items-center">
       <div>
         <h1 className="text-3xl font-medium mb-4">Sign In</h1>
 
