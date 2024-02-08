@@ -9,11 +9,11 @@ const initialState = {
 
 const baseUrl = 'http://127.0.0.1:3000';
 
-export const addMentorToServer = createAsyncThunk('addMentor/addToServer', async (mentorData) => {
+export const addMentorToServer = createAsyncThunk('addMentor/addToServer', async (formData) => {
   try {
-    const response = await axios.post(`${baseUrl}/api/v1/mentors`, mentorData, {
+    const response = await axios.post(`${baseUrl}/api/v1/mentors`, formData, {
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data',
       },
     });
     return response.data;

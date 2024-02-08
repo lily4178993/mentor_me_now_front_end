@@ -16,6 +16,8 @@ const AddMentor = () => {
     photo_url: '',
   });
 
+  const [file, setFile] = useState(null); // New state for the file input
+
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -25,9 +27,20 @@ const AddMentor = () => {
     });
   };
 
+  const handleImageChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addMentorToServer(formData));
+    const newFormData = new FormData();
+    Object.keys(formData).forEach((key) => {
+      newFormData.append(`mentor[${key}]`, formData[key]); // Nest the data under 'mentor' key
+    });
+    if (file) {
+      newFormData.append('mentor[photo_url]', file); // Nest the file under 'mentor' key
+    }
+    dispatch(addMentorToServer(newFormData));
     setFormData({
       name: '',
       occupation: '',
@@ -36,8 +49,8 @@ const AddMentor = () => {
       year_of_experience: 0,
       location: '',
       skills: '',
-      photo_url: '',
     });
+    setFile(null); // Reset the file state
   };
 
   return (
@@ -96,8 +109,8 @@ const AddMentor = () => {
         <div className="form-row">
           <label htmlFor="photo_url" className="form-label">
             {' '}
-            <span className="add_mentor_label">Photo Url</span>
-            <input type="text" name="photo_url" value={formData.photo_url} onChange={handleChange} />
+            <span className="add_mentor_label">Upload Image</span>
+            <input type="file" name="photo_url" accept="image/*" onChange={handleImageChange} />
           </label>
         </div>
         <button type="submit" onClick={handleSubmit} className="submit-button">Submit</button>
