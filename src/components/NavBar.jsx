@@ -32,7 +32,7 @@ const NavBar = () => {
     {
       id: 6,
       path: '/delete',
-      name: 'Delete Mentor',
+      name: 'Delete',
     },
   ];
 
