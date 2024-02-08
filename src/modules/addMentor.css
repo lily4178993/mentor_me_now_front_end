@@ -1,17 +1,71 @@
 .add_mentor_form {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 300px; */
   position: absolute;
-  /* top: ; */
+  top: 10px;
   left: 350px;
-  /* right: 150px; */
 }
 
-.add_mentor_img {
-  border: 3px solid red;
+.add_mentor_form input {
+  margin: 10px;
   padding: 10px;
-  background-color: aqua;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
+
+.add_mentor_form input[type="decimal"],
+.add_mentor_form input[type="number"] {
+  text-align: center;
+}
+
+/* .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  border: 3px solid red;
+} */
+
+/* .form-label {
+  flex: 1;
+  border: 3px solid red;
+}
+
+.form-label input {
+  flex: 2;
+  margin-left: 10px;
+} */
+
+@media (min-width: 768px) {
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add_mentor_form {
+    top: 20px;
+    width: 600px;
+    height: 700px;
+  }
+
+  .add_mentor_form label {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .form-label {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* @media (min-width: 1024px) {
+
+} */
