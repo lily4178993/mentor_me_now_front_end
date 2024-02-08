@@ -28,7 +28,6 @@
 .add_mentor_form input[type="decimal"],
 .add_mentor_form input[type="number"] {
   text-align: end;
-  font-weight: 400;
 }
 
 .add_mentor_form button {

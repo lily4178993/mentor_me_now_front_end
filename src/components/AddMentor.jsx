@@ -96,7 +96,7 @@ const AddMentor = () => {
         <div className="form-row">
           <label htmlFor="photo_url" className="form-label">
             {' '}
-            <span className="add_mentor_label">Photo</span>
+            <span className="add_mentor_label">Photo Url</span>
             <input type="text" name="photo_url" value={formData.photo_url} onChange={handleChange} />
           </label>
         </div>
