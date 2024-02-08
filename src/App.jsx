@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="w-full h-auto md:h-[100vh] flex justify-start items-center border-blue-500">
       {location.pathname !== '/' && <NavBar />}
-      <section className="h-full lg:w-[78%] flex">
+      <section className="h-full lg:w-[80%] flex">
         <Routes>
           <Route path="/" element={<SignInForm />} />
           <Route path="/mentors" element={<Home />} />

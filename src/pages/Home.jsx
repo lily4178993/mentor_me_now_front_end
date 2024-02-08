@@ -61,12 +61,12 @@ const Home = () => {
   };
 
   return (
-    <section className="w-3/4 border m-auto">
+    <section className="w-[100%] flex flex-col justify-start h-full py-[3rem] border-orange-500 m-auto">
       <Header />
       {status === 'loading' && <LoadingStatus />}
       {status === 'failed' && <ErrorStatus error={error} />}
       {status === 'succeeded' && (
-        <div className="mt-20">
+        <div className="mt-8">
           {mentors && mentors.length > 0 ? (
             <MentorList mentors={mentors} settings={settings} />
           ) : (

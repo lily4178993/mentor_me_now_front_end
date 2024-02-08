@@ -8,10 +8,10 @@
  * <Header />
  */
 const Header = () => (
-  <div>
-    <h1 className="uppercase font-extrabold">Our Best Mentors</h1>
-    <p className="text-xs">Please select a Mentor</p>
-    <div className="w-1/6 mx-auto mt-8 border-0 border-t-[2px] border-t-primary-gray/50 border-dotted" />
+  <div className="flex flex-col border-blue-500 justify-center gap-4 items-center">
+    <h1 className="capitalize text-4xl font-bold">Find your perfect mentor</h1>
+    <p className="text-xs">Unlock our potential</p>
+    <div className="w-1/6 mx-auto mt-4 border-0 border-t-[2px] border-t-primary-gray/50 border-dotted" />
   </div>
 );
 

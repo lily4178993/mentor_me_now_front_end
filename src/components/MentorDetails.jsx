@@ -7,7 +7,7 @@ const MentorDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { details, loading, error } = useSelector(
-    (state) => state.mentorDetails
+    (state) => state.mentorDetails,
   );
 
   useEffect(() => {
@@ -94,7 +94,7 @@ const MentorDetails = () => {
           </section>
           <div className="h-auto mt-auto flex justify-center items-center">
             <Link
-              to={`/mentors`}
+              to="/mentors"
               className="py-4 px-6 w-[200px] text-center rounded-full bg-primary-green text-white font-bold text-xl"
             >
               Reserve
@@ -104,7 +104,7 @@ const MentorDetails = () => {
       </section>
       <div className="flex h-[10%] justify-start items-end">
         <Link
-          to={`/mentors`}
+          to="/mentors"
           className="w-full py-4 px-6 rounded-e-full bg-primary-green text-white font-bold text-xl"
         >
           Back
