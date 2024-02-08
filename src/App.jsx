@@ -5,7 +5,7 @@ import ReserveMentor from './components/ReserveMentor';
 import Reservations from './components/Reservations';
 import AddMentor from './components/AddMentor';
 import Delete from './components/Delete';
-import NavBar from './components/Navbar';
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
