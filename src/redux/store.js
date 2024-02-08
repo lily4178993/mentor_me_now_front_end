@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mentorReducer from './slices/mentor/mentorSlice';
+import addMentorReducer from './slices/mentor/addMentorSlice';
 import authReducer from './slices/auth/authSlice';
 
 /**
@@ -11,6 +12,7 @@ const store = configureStore({
   reducer: {
     mentor: mentorReducer,
     auth: authReducer,
+    addMentor: addMentorReducer,
   },
 });
 
