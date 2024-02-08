@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
-import { fetchMentor } from '../redux/slices/mentor/mentorSlice';
 import AlertStatus from '../components/AlertStatus';
 import SampleArrow from '../components/ux/SampleArrow';
 import testImage from '../assets/photo-Marie-Curie.png';
@@ -10,6 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import MentorCard from '../components/MentorCard';
 import getRandomColor from '../utils/getRandomColor';
+import { fetchMentorsList } from '../redux/slices/mentors/mentorsListSlice';
 
 /**
  * Home component. Displays a list of mentors fetched from the API.
@@ -17,10 +17,10 @@ import getRandomColor from '../utils/getRandomColor';
  */
 const Home = () => {
   const dispatch = useDispatch();
-  const { mentors, status, error } = useSelector((state) => state.mentor);
+  const { mentors, status, error } = useSelector((state) => state.mentorsList);
 
   useEffect(() => {
-    dispatch(fetchMentor());
+    dispatch(fetchMentorsList());
   }, [dispatch]);
 
   /**
@@ -62,10 +62,14 @@ const Home = () => {
   };
 
   return (
-    <section className=" h-full w-full border-green-500 pt-[5rem]">
-      <div className="border text-center">
-        <h1 className="uppercase text-4xl font-medium">Meet Our best Mentors</h1>
-        <p className="text-xs mt-4">Please select a Mentor</p>
+    <section className=" h-full w-full lg:py-8 border-green-500 flex flex-col justify-start items-center">
+      <div className="text-center">
+        <h1 className="capitalize text-primary-black text-4xl font-bold lg:leading-[3rem]">
+          <span>Find your perfect mentor</span>
+          {' '}
+          <br />
+          <span className="text-sm font-normal">Unlock your potential</span>
+        </h1>
         <div className="w-1/6 mx-auto mt-8 border-0 border-t-[2px] border-t-primary-gray/50 border-dotted">
           {' '}
         </div>
@@ -87,7 +91,7 @@ const Home = () => {
         </div>
       )}
       {status === 'succeeded' && (
-        <div className="mt-20 border-orange-500">
+        <div className="mt-20 w-full border-orange-500">
           {mentors && mentors.length > 0 ? (
             <>
               {/* eslint-disable-next-line react/jsx-props-no-spreading */}

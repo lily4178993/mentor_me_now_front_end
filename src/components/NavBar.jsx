@@ -37,16 +37,18 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="basis-[20%] h-full shadow">
-      <img src={logo} alt="logo" className="logo" />
-      <ul className="navbar_links">
+    <nav className="basis-[20%] h-full shadow-md">
+      <div className="flex justify-start items-center">
+        <img src={logo} alt="logo" className="logo" />
+      </div>
+      <ul className="navbar_links lg:pl-6">
         {navlinkData.map((link) => (
-          <li key={link.id} className="border-b p-0">
+          <li key={link.id} className="border-b uppercase font-bold text-[#111111] p-0">
             <NavLink
               to={link.path}
               className={({ isActive }) => (isActive
                 ? 'active_box inline-block w-[100%] h-[100%] py-4 px-4'
-                : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4  ')}
+                : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4')}
             >
               {link.name}
             </NavLink>

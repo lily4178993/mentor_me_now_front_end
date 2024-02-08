@@ -6,16 +6,15 @@ import Reservations from './components/Reservations';
 import AddMentor from './components/AddMentor';
 import Delete from './components/Delete';
 import NavBar from './components/NavBar';
-import './App.css';
 import MentorDetails from './components/MentorDetails';
 
 function App() {
   const location = useLocation();
 
   return (
-    <main className="w-full h-auto md:h-[100vh] flex justify-start items-start border-blue-500">
+    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center border-blue-500">
       {location.pathname !== '/' && <NavBar />}
-      <section className="border-red-500 h-full lg:w-[80%]">
+      <section className="h-full lg:w-[78%] flex">
         <Routes>
           <Route path="/" element={<SignInForm />} />
           <Route path="/mentors" element={<Home />} />
