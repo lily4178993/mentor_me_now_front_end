@@ -1,0 +1,17 @@
+.add_mentor_form {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 300px; */
+  position: absolute;
+  /* top: ; */
+  left: 350px;
+  /* right: 150px; */
+}
+
+.add_mentor_img {
+  border: 3px solid red;
+  padding: 10px;
+  background-color: aqua;
+}
