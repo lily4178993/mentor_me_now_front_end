@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMentorToServer } from '../redux/slices/mentor/addMentorSlice';
 import '../modules/addMentor.css';
@@ -19,6 +19,8 @@ const AddMentor = () => {
   const [file, setFile] = useState(null); // New state for the file input
 
   const dispatch = useDispatch();
+
+  const formRef = useRef();
 
   const handleChange = (e) => {
     setFormData({
@@ -51,11 +53,12 @@ const AddMentor = () => {
       skills: '',
     });
     setFile(null); // Reset the file state
+    formRef.current.reset();
   };
 
   return (
     <section className="add_mentor_section">
-      <form className="add_mentor_form">
+      <form className="add_mentor_form" ref={formRef}>
         <h2>BE A MENTOR</h2>
         <div className="form-row">
           <label htmlFor="name" className="form-label">
