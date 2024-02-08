@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import useRandomBackgroundColor from '../hooks/useRandomBackgroundColor';
 
-const MentorCard = ({ id, name, image, about }) => {
+const MentorCard = ({
+  id, name, image, about,
+}) => {
   const bgColor = useRandomBackgroundColor();
 
   return (

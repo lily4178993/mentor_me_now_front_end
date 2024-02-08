@@ -26,7 +26,7 @@ MentorList.propTypes = {
       name: PropTypes.string,
       photo_url: PropTypes.string,
       about: PropTypes.string,
-    })
+    }),
   ).isRequired,
   settings: PropTypes.shape({}).isRequired,
 };
