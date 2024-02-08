@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setUsername } from '../redux/authSlice';
+import { setUsername } from '../redux/slices/auth/authSlice';
 
 const SignInForm = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,6 @@ const SignInForm = () => {
     const username = event.target.username.value;
     dispatch(setUsername(username));
     event.target.reset();
-
     navigate('/home');
   };
 
