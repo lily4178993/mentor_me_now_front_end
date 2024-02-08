@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import MentorCard from '../MentorCard';
 
 const MentorList = ({ mentors, settings }) => (
-  <>
+  <div className="border max-w-7xl border-orange-500">
     {/* eslint-disable-next-line react/jsx-props-no-spreading */}
     <Slider {...settings}>
       {mentors?.map((mentor) => (
@@ -16,7 +16,7 @@ const MentorList = ({ mentors, settings }) => (
         />
       ))}
     </Slider>
-  </>
+  </div>
 );
 
 MentorList.propTypes = {
@@ -26,7 +26,7 @@ MentorList.propTypes = {
       name: PropTypes.string,
       photo_url: PropTypes.string,
       about: PropTypes.string,
-    }),
+    })
   ).isRequired,
   settings: PropTypes.shape({}).isRequired,
 };
