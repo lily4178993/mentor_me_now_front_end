@@ -1,18 +1,40 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const BASE_URL = 'http://127.0.0.1:3000';
+const ENDPOINT = '/api/v1/users';
+
+// Async thunk action for sign in
+export const signIn = createAsyncThunk('auth/signIn', async (username) => {
+  const response = await axios.post(`${BASE_URL}${ENDPOINT}`, { username });
+  return response.data;
+});
+
+const initialState = {
+  user: null,
+  status: 'idle',
+  error: null,
+};
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: {
-    username: '',
-  },
-  reducers: {
-    setUsername: (state, action) => {
-      state.username = action.payload;
-    },
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(signIn.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(signIn.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.user = action.payload;
+      })
+      .addCase(signIn.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
   },
 });
 
-export const { setUsername } = authSlice.actions;
-export const selectUsername = (state) => state.auth.username;
-
-export default authSlice.reducer;
+export const { reducer } = authSlice;
+export default reducer;
