@@ -38,7 +38,7 @@ const NavBar = () => {
 
   return (
     <nav className="basis-[20%] h-full shadow-md flex flex-col justify-between items-center">
-      <div className="flex w-full justify-start items-center">
+      <div className="flex w-full justify-center items-center">
         <img src={logo} alt="logo" className="logo" />
       </div>
       <ul className="navbar_links lg:pl-6 w-full">
@@ -55,7 +55,7 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <div className="social_media w-full">
+      <div className="social_media w-full mb-4">
         <img src={twitter} alt="twitter logo" />
         <img src={facebook} alt="facebook logo" />
         <img src={google} alt="google logo" />
