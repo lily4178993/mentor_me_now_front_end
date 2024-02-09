@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Slider from 'react-slick';
 import { fetchMentor } from '../redux/slices/mentor/mentorSlice';
-import AlertStatus from '../components/AlertStatus';
 import SampleArrow from '../components/ux/SampleArrow';
-import testImage from '../assets/photo-Marie-Curie.png';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import MentorCard from '../components/MentorCard';
-import getRandomColor from '../utils/getRandomColor';
+import AlertStatus from '../components/AlertStatus';
+import MentorList from '../components/ux/MentorList';
+import ErrorStatus from '../components/ux/ErrorStatus';
+import LoadingStatus from '../components/ux/LoadingStatus';
+import Header from '../components/ux/Header';
 
 /**
  * Home component. Displays a list of mentors fetched from the API.
@@ -23,9 +23,9 @@ const Home = () => {
   }, [dispatch]);
 
   /**
-   * Settings for the Slider component.
-   * @type {Object}
-   */
+ * Settings for the Slider component.
+ * @type {Object}
+ */
   const settings = {
     lazyLoad: true,
     className: 'center',
@@ -62,48 +62,13 @@ const Home = () => {
 
   return (
     <section className="w-3/4 m-auto">
-      <div>
-        <h1 className="uppercase font-extrabold">Ours best Mentors</h1>
-        <p className="text-xs -mt-4">Please select a Mentor</p>
-        <div className="w-1/6 mx-auto mt-8 border-0 border-t-[2px] border-t-primary-gray/50 border-dotted">
-          {' '}
-        </div>
-      </div>
-      {status === 'loading' && (
-        <AlertStatus
-          className="h-[420px] flex justify-center items-center animate-bounce text-lg uppercase text-primary-orange"
-          alertMessage="Loading..."
-        />
-      )}
-      {status === 'failed' && (
-        <div className="h-[420px] flex flex-col justify-center items-center text-primary-red">
-          <p>
-            Error when fetching information.
-            <br />
-            {' '}
-            Causes:
-            {' '}
-          </p>
-          <AlertStatus className="text-lg" alertMessage={error} />
-        </div>
-      )}
+      <Header />
+      {status === 'loading' && <LoadingStatus />}
+      {status === 'failed' && <ErrorStatus error={error} />}
       {status === 'succeeded' && (
-        <div className="mt-20 border border-orange-500">
+        <div className="mt-20">
           {mentors && mentors.length > 0 ? (
-            <>
-              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-              <Slider {...settings}>
-                {mentors?.map((mentor) => (
-                  <MentorCard
-                    key={mentor.id}
-                    name={mentor.name}
-                    image={testImage}
-                    about={mentor.about}
-                    backgroundColor={getRandomColor()}
-                  />
-                ))}
-              </Slider>
-            </>
+            <MentorList mentors={mentors} settings={settings} />
           ) : (
             <AlertStatus
               className="h-[420px] flex justify-center items-center text-lg uppercase text-primary-gray"
