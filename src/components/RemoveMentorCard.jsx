@@ -2,13 +2,11 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeMentor } from '../redux/slices/mentors/removeMentorSlice';
 
-const RemoveMentorCard = ({
-  id, name, photoUrl, about,
-}) => {
+const RemoveMentorCard = ({ id, name, photoUrl, about, removed }) => {
   const dispatch = useDispatch();
 
   return (
-    <section className="flex items-center border w-auto p-4 rounded-md shadow-sm basis-[500px] gap-6">
+    <section className="flex items-center relative border w-auto p-4 rounded-md shadow-sm basis-[500px] gap-6">
       <div className="h-[200px] flex justify-center items-center relative">
         <div className="h-[130px] w-[130px] rounded-full bg-gray-100">
           <img
@@ -29,6 +27,14 @@ const RemoveMentorCard = ({
           Remove
         </button>
       </div>
+      {removed && (
+        <button
+          type="button"
+          className="absolute top-0 px-2 text-white border-2 bg-green-500 border-green-500 py-0.5 rounded right-0"
+        >
+          Removed
+        </button>
+      )}
     </section>
   );
 };
@@ -38,6 +44,7 @@ RemoveMentorCard.propTypes = {
   name: PropTypes.string.isRequired,
   photoUrl: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
+  removed: PropTypes.bool.isRequired,
 };
 
 export default RemoveMentorCard;

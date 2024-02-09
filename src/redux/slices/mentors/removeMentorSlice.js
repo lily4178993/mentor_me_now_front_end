@@ -13,7 +13,7 @@ export const removeMentor = createAsyncThunk(
   'mentors/removeMentor',
   async (mentorId, { rejectWithValue }) => {
     try {
-      const response = await axios.patch(`${API_URL}/mentors/${mentorId}`);
+      const response = await axios.patch(`${API_URL}/mentors/${mentorId}/remove_mentor`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

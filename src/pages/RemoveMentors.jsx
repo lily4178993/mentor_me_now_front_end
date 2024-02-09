@@ -36,6 +36,7 @@ const RemoveMentors = () => {
             name={mentor.name}
             photoUrl={mentor.photo_url}
             about={mentor.about}
+            removed={mentor.remove}
           />
         ))}
       </div>
