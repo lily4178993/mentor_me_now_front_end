@@ -1,16 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import mentorReducer from './slices/mentor/mentorSlice';
-import addMentorReducer from './slices/mentor/addMentorSlice';
+import mentorsListReducer from './slices/mentors/mentorsListSlice';
+import mentorDetailsReducer from './slices/mentors/mentorDetailsSlice';
 import authReducer from './slices/auth/authSlice';
-
-/**
- * Redux store configured with the mentor reducer.
- * @type {Store}
- */
+import addMentorReducer from './slices/mentors/addMentorSlice';
 
 const store = configureStore({
   reducer: {
-    mentor: mentorReducer,
+    mentorsList: mentorsListReducer,
+    mentorDetails: mentorDetailsReducer,
     auth: authReducer,
     addMentor: addMentorReducer,
   },

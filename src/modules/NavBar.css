@@ -12,12 +12,11 @@
   font-weight: 500;
 }
 
-ul li {
+/* ul li {
   padding: 10px;
-}
+} */
 
 .active_box {
-  padding: 10px;
   background-color: #97bf0f;
   color: #fff;
 }

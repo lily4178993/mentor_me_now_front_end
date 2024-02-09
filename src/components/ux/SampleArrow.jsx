@@ -17,15 +17,15 @@ const SampleArrow = (props) => {
 
   const arrowStyles = {
     nextArrow: {
-      display: 'block',
+      right: '0px',
       background: '#97BF0F',
-      padding: '15px 30px 30px 10px',
+      padding: '10px 30px 30px 10px',
       borderTopLeftRadius: '50%',
       borderBottomLeftRadius: '50%',
       zIndex: 10,
     },
     prevArrow: {
-      display: 'block',
+      left: '0px',
       background: '#BCBCBE',
       padding: '15px 30px 30px 10px',
       borderTopRightRadius: '50%',
@@ -43,7 +43,7 @@ const SampleArrow = (props) => {
 
   return (
     <div
-      className={className}
+      className={`${className}`}
       style={customStyle()}
       onClick={onClick}
       onKeyDown={onClick}

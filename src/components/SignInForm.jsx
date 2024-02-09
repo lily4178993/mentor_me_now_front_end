@@ -12,11 +12,11 @@ const SignInForm = () => {
     const username = event.target.username.value;
     dispatch(setUsername(username));
     event.target.reset();
-    navigate('/home');
+    navigate('/mentors');
   };
 
   return (
-    <div className="h-[100vh] border flex justify-center items-center">
+    <div className="h-[100vh] w-full flex justify-center items-center">
       <div>
         <h1 className="text-3xl font-medium mb-4">Sign In</h1>
 
@@ -27,6 +27,7 @@ const SignInForm = () => {
               className="rounded p-2 px-4 border"
               name="username"
               id="username"
+              required
             />
           </div>
           <div className="mt-4">

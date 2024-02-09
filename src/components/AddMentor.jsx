@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addMentorToServer } from '../redux/slices/mentor/addMentorSlice';
+import { addMentorToServer } from '../redux/slices/mentors/addMentorSlice';
 import MentorFormField from './ux/MentorFormField';
 import '../modules/addMentor.css';
 

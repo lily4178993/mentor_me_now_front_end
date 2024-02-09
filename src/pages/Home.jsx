@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMentor } from '../redux/slices/mentor/mentorSlice';
 import SampleArrow from '../components/ux/SampleArrow';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -9,6 +8,9 @@ import MentorList from '../components/ux/MentorList';
 import ErrorStatus from '../components/ux/ErrorStatus';
 import LoadingStatus from '../components/ux/LoadingStatus';
 import Header from '../components/ux/Header';
+import { fetchMentorsList } from '../redux/slices/mentors/mentorsListSlice';
+
+// import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 /**
  * Home component. Displays a list of mentors fetched from the API.
@@ -16,23 +18,23 @@ import Header from '../components/ux/Header';
  */
 const Home = () => {
   const dispatch = useDispatch();
-  const { mentors, status, error } = useSelector((state) => state.mentor);
+  const { mentors, status, error } = useSelector((state) => state.mentorsList);
 
   useEffect(() => {
-    dispatch(fetchMentor());
+    dispatch(fetchMentorsList());
   }, [dispatch]);
 
   /**
- * Settings for the Slider component.
- * @type {Object}
- */
+   * Settings for the Slider component.
+   * @type {Object}
+   */
   const settings = {
     lazyLoad: true,
     className: 'center',
     infinite: false,
     slidesToShow: 3,
     swipeToSlide: true,
-    nextArrow: <SampleArrow ariaLabel="Next" />,
+    nextArrow: <SampleArrow className="bg-red-500" ariaLabel="Next" />,
     prevArrow: <SampleArrow ariaLabel="Previous" />,
     responsive: [
       {
@@ -61,12 +63,12 @@ const Home = () => {
   };
 
   return (
-    <section className="w-3/4 m-auto">
+    <section className="w-[100%] flex flex-col justify-start h-full py-[7rem] border-orange-500 m-auto">
       <Header />
       {status === 'loading' && <LoadingStatus />}
       {status === 'failed' && <ErrorStatus error={error} />}
       {status === 'succeeded' && (
-        <div className="mt-20">
+        <div className="mt-8">
           {mentors && mentors.length > 0 ? (
             <MentorList mentors={mentors} settings={settings} />
           ) : (
@@ -80,5 +82,17 @@ const Home = () => {
     </section>
   );
 };
+
+// const CustomPrevArrow = (props) => (
+//   <button {...props} className="prev-arrow">
+//     <FiChevronLeft />
+//   </button>
+// );
+
+// const CustomNextArrow = (props) => (
+//   <button {...props} className="next-arrow">
+//     <FiChevronRight />
+//   </button>
+// );
 
 export default Home;
