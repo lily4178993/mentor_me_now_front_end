@@ -80,6 +80,7 @@
     left: 250px;
     width: 500px;
     height: 650px;
+    margin: 0 auto;
   }
 
   .add_mentor_form label {
