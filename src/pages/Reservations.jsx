@@ -27,50 +27,64 @@ const Reservations = () => {
 
   return (
     <>
-      <h1>Reservations Details:</h1>
+      <h1>Reservations List:</h1>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {reservations && (
+      {reservations && reservations.length > 0 ? (
         <ul>
           {reservations.map((reservation) => {
             const mentor = mentors.find((m) => m.id === reservation.mentor_id);
             return (
               <li key={reservation.id}>
-                {mentor
-                  ? (
-                    <div className="flex">
-                      <img src={mentor.photo_url} alt="" className="max-h-28" />
-                      <div>
-                        <p>
-                          <span>Mentor: </span>
-                          {mentor.name}
-                        </p>
-                        <p>
-                          <span>Appointment Date: </span>
-                          {reservation.date}
-                        </p>
-                        <p>
-                          <span>Start time: </span>
-                          {reservation.formatted_times.start_time}
-                        </p>
-                        <p>
-                          <span>End time: </span>
-                          {reservation.formatted_times.end_time}
-                        </p>
-                        <p>
-                          Total fees: $
-                          {calculateFees(
-                            reservation.formatted_times.start_time,
-                            reservation.formatted_times.end_time, mentor.hourly_fee,
-                          )}
-                        </p>
-                      </div>
+                {mentor ? (
+                  <div className="flex">
+                    <img
+                      src={mentor.photo_url}
+                      alt=""
+                      className="max-h-28"
+                    />
+                    <div>
+                      <p>
+                        <span>Mentor: </span>
+                        {mentor.name}
+                      </p>
+                      <p>
+                        <span>Appointment Date: </span>
+                        {reservation.date}
+                      </p>
+                      <p>
+                        <span>Start time: </span>
+                        {reservation.formatted_times.start_time}
+                      </p>
+                      <p>
+                        <span>End time: </span>
+                        {reservation.formatted_times.end_time}
+                      </p>
+                      <p>
+                        Total fees: $
+                        {calculateFees(
+                          reservation.formatted_times.start_time,
+                          reservation.formatted_times.end_time,
+                          mentor.hourly_fee,
+                        )}
+                      </p>
                     </div>
-                  ) : (<p>Mentor not found</p>)}
+                  </div>
+                ) : (
+                  <p>
+                    We couldn`t find a mentor matching your request. It seems
+                    like you haven`t reserved a mentor in the usual manner.
+                  </p>
+                )}
               </li>
             );
           })}
         </ul>
+      ) : (
+        <p>
+          We couldn`t find any reservations. It looks like you haven`t reserved
+          any mentors yet.
+        </p>
       )}
     </>
   );
