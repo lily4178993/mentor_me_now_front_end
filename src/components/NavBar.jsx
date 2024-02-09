@@ -62,7 +62,6 @@ const NavBar = () => {
         <img src={instagram} alt="instagram logo" />
         <img src={pinterest} alt="pinterest logo" />
       </div>
-      <p className="copyright_text">&#169;Copyright 2024</p>
     </nav>
   );
 };

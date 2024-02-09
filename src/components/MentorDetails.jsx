@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchMentorDetails } from '../redux/slices/mentors/mentorDetailsSlice';
+import LoadingStatus from './ux/LoadingStatus';
+import ErrorStatus from './ux/ErrorStatus';
 
 const MentorDetails = () => {
   const { id } = useParams();
@@ -15,16 +17,11 @@ const MentorDetails = () => {
   }, [dispatch, id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingStatus />;
   }
 
   if (error) {
-    return (
-      <div>
-        Error:
-        {error}
-      </div>
-    );
+    return <ErrorStatus error={error} />;
   }
 
   const {

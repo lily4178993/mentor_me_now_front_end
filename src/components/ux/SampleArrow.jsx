@@ -19,7 +19,7 @@ const SampleArrow = (props) => {
     nextArrow: {
       right: '0px',
       background: '#97BF0F',
-      padding: '15px 30px 30px 10px',
+      padding: '40px 40px 40px 40px',
       borderTopLeftRadius: '50%',
       borderBottomLeftRadius: '50%',
       zIndex: 10,
@@ -43,7 +43,7 @@ const SampleArrow = (props) => {
 
   return (
     <div
-      className={`${className} flex justify-center items-center border-primary-blue`}
+      className={`${className}`}
       style={customStyle()}
       onClick={onClick}
       onKeyDown={onClick}

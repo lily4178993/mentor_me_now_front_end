@@ -10,6 +10,8 @@ import LoadingStatus from '../components/ux/LoadingStatus';
 import Header from '../components/ux/Header';
 import { fetchMentorsList } from '../redux/slices/mentors/mentorsListSlice';
 
+// import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
 /**
  * Home component. Displays a list of mentors fetched from the API.
  * @returns {JSX.Element} The rendered Home component.
@@ -23,16 +25,16 @@ const Home = () => {
   }, [dispatch]);
 
   /**
- * Settings for the Slider component.
- * @type {Object}
- */
+   * Settings for the Slider component.
+   * @type {Object}
+   */
   const settings = {
     lazyLoad: true,
     className: 'center',
     infinite: false,
     slidesToShow: 3,
     swipeToSlide: true,
-    nextArrow: <SampleArrow ariaLabel="Next" />,
+    nextArrow: <SampleArrow className="bg-red-500" ariaLabel="Next" />,
     prevArrow: <SampleArrow ariaLabel="Previous" />,
     responsive: [
       {
@@ -80,5 +82,17 @@ const Home = () => {
     </section>
   );
 };
+
+// const CustomPrevArrow = (props) => (
+//   <button {...props} className="prev-arrow">
+//     <FiChevronLeft />
+//   </button>
+// );
+
+// const CustomNextArrow = (props) => (
+//   <button {...props} className="next-arrow">
+//     <FiChevronRight />
+//   </button>
+// );
 
 export default Home;
