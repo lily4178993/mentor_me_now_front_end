@@ -4,9 +4,9 @@ import Home from './pages/Home';
 import ReserveMentor from './components/ReserveMentor';
 import Reservations from './components/Reservations';
 import AddMentor from './components/AddMentor';
-import Delete from './components/Delete';
 import NavBar from './components/NavBar';
 import MentorDetails from './components/MentorDetails';
+import RemoveMentors from './pages/RemoveMentors';
 
 function App() {
   const location = useLocation();
@@ -22,7 +22,7 @@ function App() {
           <Route path="/reserveMentor" element={<ReserveMentor />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/addMentor" element={<AddMentor />} />
-          <Route path="/delete" element={<Delete />} />
+          <Route path="/remove-mentor" element={<RemoveMentors />} />
         </Routes>
       </section>
     </main>
