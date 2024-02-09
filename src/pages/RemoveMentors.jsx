@@ -21,8 +21,14 @@ const RemoveMentors = () => {
   }
 
   return (
-    <>
-      <div className="flex flex-wrap justify-center lg:h-[100vh] items-start gap-8 py-[5rem] px-[5rem]">
+    <section className="py-[5rem] px-[5rem] pb-[3rem] h-[100vh] overflow-y-scroll">
+      <header className="flex flex-col mb-16 justify-center gap-8 items-center">
+        <h1 className="text-center font-semibold capitalize  text-4xl text-[#111111]">
+          Remove a mentor
+        </h1>
+        <div className="w-[80px] border-b-4 border-red-400" />
+      </header>
+      <div className="flex flex-wrap justify-center items-start gap-8 ">
         {mentors.map((mentor) => (
           <RemoveMentorCard
             key={mentor.id}
@@ -33,7 +39,7 @@ const RemoveMentors = () => {
           />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

@@ -42,4 +42,3 @@ const removeMentorSlice = createSlice({
 });
 
 export default removeMentorSlice.reducer;
-
