@@ -19,7 +19,7 @@ const SampleArrow = (props) => {
     nextArrow: {
       right: '0px',
       background: '#97BF0F',
-      padding: '40px 40px 40px 40px',
+      padding: '10px 30px 30px 10px',
       borderTopLeftRadius: '50%',
       borderBottomLeftRadius: '50%',
       zIndex: 10,
