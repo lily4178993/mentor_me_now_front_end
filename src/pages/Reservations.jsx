@@ -40,7 +40,7 @@ const Reservations = () => {
       )}
       {reservations && reservations.length === 0 && (
         <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center">
-          <AlertStatus alertMessage="You don't have any reservations yet." />
+          <AlertStatus alertMessage="You don't have any reservations yet." className="text-primary-orange text-2xl" />
         </div>
       )}
       <h1 className="text-center text-4xl font-bold underline p-4 mb-3">
