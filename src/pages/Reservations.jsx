@@ -3,8 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservationsList } from '../redux/slices/reservations/reservationsListSlice';
 
 const calculateFees = (startTimeParam, endTimeParam, hourlyFeeParam) => {
-  const startTime = new Date(`1970-01-01T${startTimeParam}:00Z`);
-  const endTime = new Date(`1970-01-01T${endTimeParam}:00Z`);
+  const convertTo24Hour = (time) => {
+    const [main, period] = time.split(' ');
+    const [hours, minutes] = main.split(':');
+    let hours24 = hours;
+    if (period === 'PM') {
+      hours24 = (hours % 12) + 12;
+    }
+    return `${hours24}:${minutes}`;
+  };
+
+  const startTime = new Date(`1970-01-01T${convertTo24Hour(startTimeParam)}:00Z`);
+  const endTime = new Date(`1970-01-01T${convertTo24Hour(endTimeParam)}:00Z`);
   const hours = (endTime - startTime) / (1000 * 60 * 60);
   return (hourlyFeeParam * hours).toFixed(2);
 };
