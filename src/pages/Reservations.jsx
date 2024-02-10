@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservationsList } from '../redux/slices/reservations/reservationsListSlice';
+import LoadingStatus from '../components/ux/LoadingStatus';
 
 const calculateFees = (startTimeParam, endTimeParam, hourlyFeeParam) => {
   const convertTo24Hour = (time) => {
@@ -32,13 +33,13 @@ const Reservations = () => {
   }, [dispatch, user]);
 
   if (!user) {
-    return <p>Loading...</p>;
+    return <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center"><LoadingStatus /></div>;
   }
 
   return (
-    <section className="w-full h-full m-auto px-2 md:p-2">
+    <section className="w-full h-full m-auto px-2 md:p-2 relative overflow-hidden">
       <h1 className="text-center text-4xl font-bold underline p-4 mb-3">Your Appointments</h1>
-      {loading && <p>Loading...</p>}
+      {loading && <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center"><LoadingStatus /></div>}
       {error && <p>{error}</p>}
       {reservations && reservations.length > 0 ? (
         <ul className="flex flex-wrap justify-center gap-x-2 gap-y-3 md:gap-y-5">
