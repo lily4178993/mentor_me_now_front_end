@@ -24,7 +24,7 @@ const RemoveMentorCard = ({
         {removed ? (
           <button
             type="button"
-            className="bg-green-500 border-2 border-green-500 text-white mt-1 hover:bg-green-700 hover:text-white transition-all duration-500  px-4 py-1 rounded"
+            className="bg-primary-green border-2 border-primary-green text-white mt-1 hover:bg-primary-green/80 hover:text-white transition-all duration-500  px-4 py-1 rounded"
             onClick={() => dispatch(removeMentor(id))}
           >
             Restore

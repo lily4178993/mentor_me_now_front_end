@@ -5,20 +5,8 @@ import mentorsListReducer from './slices/mentors/mentorsListSlice';
 import mentorDetailsReducer from './slices/mentors/mentorDetailsSlice';
 import authReducer from './slices/auth/authSlice';
 import addMentorReducer from './slices/mentors/addMentorSlice';
-<<<<<<< HEAD
 import removeMentorReducer from './slices/mentors/removeMentorSlice';
 import removedMentorsReducer from './slices/mentors/removedMentorsSlice';
-
-const store = configureStore({
-  reducer: {
-    mentorsList: mentorsListReducer,
-    mentorDetails: mentorDetailsReducer,
-    auth: authReducer,
-    addMentor: addMentorReducer,
-    removeMentor: removeMentorReducer,
-    removedMentorsList: removedMentorsReducer,
-  },
-=======
 import createReservationReducer from './slices/reservations/createReservationSlice';
 import reservationsListReducer from './slices/reservations/reservationsListSlice';
 
@@ -34,7 +22,8 @@ const rootReducer = combineReducers({
   addMentor: addMentorReducer,
   createReservation: createReservationReducer,
   reservationsList: reservationsListReducer,
->>>>>>> cce9dd4784532fd686a5434ffb2e2f2f624de86d
+  removeMentor: removeMentorReducer,
+  removedMentorsList: removedMentorsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
