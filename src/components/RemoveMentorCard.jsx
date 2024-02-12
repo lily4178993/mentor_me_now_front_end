@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeMentor } from '../redux/slices/mentors/removeMentorSlice';
 
-const RemoveMentorCard = ({ id, name, photoUrl, about, removed }) => {
+const RemoveMentorCard = ({
+  id, name, photoUrl, about, removed,
+}) => {
   const dispatch = useDispatch();
 
   return (
@@ -19,22 +21,33 @@ const RemoveMentorCard = ({ id, name, photoUrl, about, removed }) => {
       <div className="flex flex-col justify-start items-start">
         <h3 className="text-lg font-semibold text-[#111111]">{name}</h3>
         <p className="text-gray-700">{about}</p>
-        <button
-          type="button"
-          className="bg-transparent border-2 border-red-500 text-red-500 mt-3 hover:bg-red-500 hover:text-white transition-all duration-500  px-4 py-1 rounded"
-          onClick={() => dispatch(removeMentor(id))}
-        >
-          Remove
-        </button>
+        {removed ? (
+          <button
+            type="button"
+            className="bg-green-500 border-2 border-green-500 text-white mt-1 hover:bg-green-700 hover:text-white transition-all duration-500  px-4 py-1 rounded"
+            onClick={() => dispatch(removeMentor(id))}
+          >
+            Restore
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="bg-transparent border-2 border-red-500 text-red-500 mt-1 hover:bg-red-500 hover:text-white transition-all duration-500  px-4 py-1 rounded"
+            onClick={() => dispatch(removeMentor(id))}
+          >
+            Remove
+          </button>
+        )}
       </div>
-      {removed && (
+
+      {/* {removed && (
         <button
           type="button"
-          className="absolute top-0 px-2 text-white border-2 bg-green-500 border-green-500 py-0.5 rounded right-0"
+          className="absolute top-2 px-2 text-white border-2 bg-primary-orange border-primary-orange py-0.5 rounded left-2"
         >
           Removed
         </button>
-      )}
+      )} */}
     </section>
   );
 };

@@ -6,7 +6,7 @@ import Reservations from './components/Reservations';
 import AddMentor from './components/AddMentor';
 import NavBar from './components/NavBar';
 import MentorDetails from './components/MentorDetails';
-import RemoveMentors from './pages/RemoveMentors';
+import RemoveMentorsPage from './pages/RemoveMentorsPage';
 
 function App() {
   const location = useLocation();
@@ -22,7 +22,7 @@ function App() {
           <Route path="/reserveMentor" element={<ReserveMentor />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/addMentor" element={<AddMentor />} />
-          <Route path="/remove-mentor" element={<RemoveMentors />} />
+          <Route path="/remove-mentor" element={<RemoveMentorsPage />} />
         </Routes>
       </section>
     </main>

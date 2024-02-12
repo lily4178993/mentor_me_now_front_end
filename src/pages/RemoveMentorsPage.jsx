@@ -5,7 +5,7 @@ import ErrorStatus from '../components/ux/ErrorStatus';
 import LoadingStatus from '../components/ux/LoadingStatus';
 import RemoveMentorCard from '../components/RemoveMentorCard';
 
-const RemoveMentors = () => {
+const RemoveMentorsPage = () => {
   const dispatch = useDispatch();
   const { mentors, status, error } = useSelector((state) => state.mentorsList);
 
@@ -44,4 +44,4 @@ const RemoveMentors = () => {
   );
 };
 
-export default RemoveMentors;
+export default RemoveMentorsPage;

@@ -13,7 +13,9 @@ export const removeMentor = createAsyncThunk(
   'mentors/removeMentor',
   async (mentorId, { rejectWithValue }) => {
     try {
-      const response = await axios.patch(`${API_URL}/mentors/${mentorId}/remove_mentor`);
+      const response = await axios.patch(
+        `${API_URL}/mentors/${mentorId}/remove_mentor`,
+      );
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -30,9 +32,9 @@ const removeMentorSlice = createSlice({
       .addCase(removeMentor.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(removeMentor.fulfilled, (state, action) => {
+      .addCase(removeMentor.fulfilled, (state) => {
         state.status = 'succeeded';
-        console.log('success');
+        window.location.reload();
       })
       .addCase(removeMentor.rejected, (state, action) => {
         state.status = 'failed';
