@@ -39,15 +39,6 @@ const RemoveMentorCard = ({
           </button>
         )}
       </div>
-
-      {/* {removed && (
-        <button
-          type="button"
-          className="absolute top-2 px-2 text-white border-2 bg-primary-orange border-primary-orange py-0.5 rounded left-2"
-        >
-          Removed
-        </button>
-      )} */}
     </section>
   );
 };

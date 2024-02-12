@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const API_URL = 'http://localhost:3000/api/v1';
+
 const initialState = {
   mentors: [],
   loading: false,
@@ -9,9 +11,9 @@ const initialState = {
 
 export const fetchRemovedMentors = createAsyncThunk(
   'mentors/fetchRemovedMentors',
-  async ({ rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('https://api.example.com/mentors');
+      const response = await axios.get(`${API_URL}/removed_mentors`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -19,8 +21,7 @@ export const fetchRemovedMentors = createAsyncThunk(
   },
 );
 
-// Create the slice
-const removedMentorsListSlice = createSlice({
+const removedMentorsSlice = createSlice({
   name: 'removedMentorsList',
   initialState,
   reducers: {},
@@ -41,4 +42,4 @@ const removedMentorsListSlice = createSlice({
   },
 });
 
-export default removedMentorsListSlice.reducer;
+export default removedMentorsSlice.reducer;

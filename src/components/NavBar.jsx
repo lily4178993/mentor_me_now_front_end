@@ -31,7 +31,7 @@ const NavBar = () => {
     },
     {
       id: 6,
-      path: '/remove-mentor',
+      path: '/remove_mentor',
       name: 'Remove Mentors',
     },
   ];
