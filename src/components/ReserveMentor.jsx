@@ -19,8 +19,7 @@ const ReserveMentor = () => {
     if (!userId) {
       return;
     }
-    if (startTime === '' || endTime === '' || date === '' || mentorId === '')
-      return;
+    if (startTime === '' || endTime === '' || date === '' || mentorId === '') return;
 
     const newReservation = {
       start_time: `${startTime}:00`,
