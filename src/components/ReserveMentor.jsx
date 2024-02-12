@@ -5,7 +5,7 @@ import LoadingStatus from './ux/LoadingStatus';
 import ErrorStatus from './ux/ErrorStatus';
 
 const ReserveMentor = () => {
-  const userId = useSelector((state) => state.auth.user.id);
+  const userId = useSelector((state) => state.authLogin.user.id);
   const mentorsList = useSelector((state) => state.mentorsList.mentors);
   const { loading, error } = useSelector((state) => state.createReservation);
   const [startTime, setStartTime] = useState('');
