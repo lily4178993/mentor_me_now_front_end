@@ -5,6 +5,8 @@ import mentorsListReducer from './slices/mentors/mentorsListSlice';
 import mentorDetailsReducer from './slices/mentors/mentorDetailsSlice';
 import authReducer from './slices/auth/authSlice';
 import addMentorReducer from './slices/mentors/addMentorSlice';
+import removeMentorReducer from './slices/mentors/removeMentorSlice';
+import removedMentorsReducer from './slices/mentors/removedMentorsSlice';
 import createReservationReducer from './slices/reservations/createReservationSlice';
 import reservationsListReducer from './slices/reservations/reservationsListSlice';
 
@@ -20,6 +22,8 @@ const rootReducer = combineReducers({
   addMentor: addMentorReducer,
   createReservation: createReservationReducer,
   reservationsList: reservationsListReducer,
+  removeMentor: removeMentorReducer,
+  removedMentorsList: removedMentorsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

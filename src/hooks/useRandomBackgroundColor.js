@@ -1,4 +1,3 @@
-// hooks/useRandomBackgroundColor.js
 import { useState, useEffect } from 'react';
 
 const useRandomBackgroundColor = () => {
