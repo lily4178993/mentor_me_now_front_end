@@ -1,4 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../redux/slices/auth/loginSlice';
 import '../modules/NavBar.css';
 import logo from '../assets/logo.jpg';
 import twitter from '../assets/twitter.svg';
@@ -8,6 +11,20 @@ import instagram from '../assets/instagram.svg';
 import pinterest from '../assets/pinterest.svg';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.authLogin.user);
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
+  const handleLogout = () => {
+    dispatch(clearUser());
+  };
+
   const navlinkData = [
     {
       id: 1,
@@ -55,12 +72,17 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <div className="social_media w-full mb-4">
-        <img src={twitter} alt="twitter logo" />
-        <img src={facebook} alt="facebook logo" />
-        <img src={google} alt="google logo" />
-        <img src={instagram} alt="instagram logo" />
-        <img src={pinterest} alt="pinterest logo" />
+      <div className="w-full mb-4 flex flex-col items-center">
+        <button type="button" onClick={handleLogout} className="py-2 px-4 bg-red-500 text-white rounded">
+          Logout
+        </button>
+        <div className="social_media mt-4">
+          <img src={twitter} alt="twitter logo" />
+          <img src={facebook} alt="facebook logo" />
+          <img src={google} alt="google logo" />
+          <img src={instagram} alt="instagram logo" />
+          <img src={pinterest} alt="pinterest logo" />
+        </div>
       </div>
     </nav>
   );
