@@ -5,6 +5,7 @@ import mentorsListReducer from './slices/mentors/mentorsListSlice';
 import mentorDetailsReducer from './slices/mentors/mentorDetailsSlice';
 import authReducer from './slices/auth/authSlice';
 import addMentorReducer from './slices/mentors/addMentorSlice';
+import createReservationReducer from './slices/reservations/createReservationSlice';
 import reservationsListReducer from './slices/reservations/reservationsListSlice';
 
 const persistConfig = {
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   mentorDetails: mentorDetailsReducer,
   auth: authReducer,
   addMentor: addMentorReducer,
+  createReservation: createReservationReducer,
   reservationsList: reservationsListReducer,
 });
 
