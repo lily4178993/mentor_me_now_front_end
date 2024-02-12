@@ -1,8 +1,8 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import SignInForm from './components/SignInForm';
 import Home from './pages/Home';
+import Reservations from './pages/Reservations';
 import ReserveMentor from './components/ReserveMentor';
-import Reservations from './components/Reservations';
 import AddMentor from './components/AddMentor';
 import NavBar from './components/NavBar';
 import MentorDetails from './components/MentorDetails';
