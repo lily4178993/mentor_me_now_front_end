@@ -52,7 +52,8 @@ const SignUpForm = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-200">
-                Already have an account?{' '}
+                Already have an account?
+                {' '}
                 <span>
                   <Link
                     to="/login"
@@ -60,7 +61,8 @@ const SignUpForm = () => {
                   >
                     Login
                   </Link>
-                </span>{' '}
+                </span>
+                {' '}
               </p>
             </div>
           </form>
