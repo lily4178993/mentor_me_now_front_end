@@ -24,13 +24,16 @@ const SignUpForm = () => {
       <div className="bg-[#111111]/50 w-full h-full flex justify-center items-center z-10">
         <div className="backdrop-blur-lg rounded-md px-8 py-[3rem] max-w-xl flex flex-col justify-start items-center">
           <h1 className="text-3xl text-gray-200 font-semibold mb-4">Create Account</h1>
-          {authError && (
+          {authError && authError.includes('422') ? (
             <p className="text-red-500">
-              {authError.includes('422')
-                ? 'The username you`ve selected is already taken. Please choose a different one.'
-                : authError}
+              The username you`ve selected is already taken. Please choose a different one.
             </p>
-          )}
+          )
+            : (
+              <p className="text-red-500">
+                {authError ? authError.message : ''}
+              </p>
+            )}
           <form onSubmit={handleSubmit} className="z-10">
             <div className="mt-4">
               <input
