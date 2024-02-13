@@ -3,11 +3,10 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
-  IoMdArrowRoundBack, FaXTwitter, FaFacebookF, IoLogoGoogleplus, FaInstagram, FaPinterestP,
+  IoMdArrowRoundBack, FaXTwitter, FaFacebookF, IoLogoGoogleplus, FaInstagram, FaPinterestP, bgVideo,
 } from '../assets';
 import { setUser, userLogin } from '../redux/slices/auth/loginSlice';
 import AlertStatus from '../components/AlertStatus';
-import bgVideo from '../assets/video.mp4';
 
 const Login = () => {
   const dispatch = useDispatch();

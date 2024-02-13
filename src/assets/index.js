@@ -7,6 +7,7 @@ import {
 import { FaXTwitter } from 'react-icons/fa6';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import logo from './logo.png';
+import bgVideo from './video.mp4';
 
 export {
   IoLogoGoogleplus,
@@ -17,4 +18,5 @@ export {
   FaInstagram,
   FaPinterestP,
   logo,
+  bgVideo,
 };
