@@ -7,15 +7,6 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.navbar_links {
-  margin-top: 50px;
-  font-weight: 500;
-}
-
-/* ul li {
-  padding: 10px;
-} */
-
 .active_box {
   background-color: #97bf0f;
   color: #fff;

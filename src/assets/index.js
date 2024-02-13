@@ -1,5 +1,6 @@
 import { IoLogoGoogleplus, IoMdArrowRoundBack } from 'react-icons/io';
 import {
+  FaEquals,
   FaFacebookF,
   FaInstagram,
   FaPinterestP,
@@ -13,6 +14,7 @@ export {
   IoLogoGoogleplus,
   IoMdArrowRoundBack,
   FaXTwitter,
+  FaEquals,
   FaFacebookF,
   TiSocialGooglePlus,
   FaInstagram,
