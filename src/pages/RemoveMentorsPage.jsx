@@ -8,7 +8,7 @@ import RemoveMentorCard from '../components/RemoveMentorCard';
 
 const RemoveMentorsPage = () => {
   const dispatch = useDispatch();
-  const { mentors, status, error } = useSelector((state) => state.mentorsList);
+  const { mentors, loading, error } = useSelector((state) => state.mentorsList);
 
   useEffect(() => {
     dispatch(fetchMentorsList());
@@ -17,7 +17,7 @@ const RemoveMentorsPage = () => {
   if (error) {
     return <ErrorStatus error={error} />;
   }
-  if (status === 'loading') {
+  if (loading) {
     return <LoadingStatus />;
   }
 

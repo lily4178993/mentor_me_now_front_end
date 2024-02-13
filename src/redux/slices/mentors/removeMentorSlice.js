@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:3000/api/v1';
 
 const initialState = {
   mentor: null,
-  status: 'idle',
+  loading: false,
   error: null,
 };
 
@@ -30,14 +30,14 @@ const removeMentorSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(removeMentor.pending, (state) => {
-        state.status = 'loading';
+        state.loading = true;
       })
       .addCase(removeMentor.fulfilled, (state) => {
-        state.status = 'succeeded';
+        state.loading = false;
         window.location.reload();
       })
       .addCase(removeMentor.rejected, (state, action) => {
-        state.status = 'failed';
+        state.loading = false;
         state.error = action.payload;
       });
   },
