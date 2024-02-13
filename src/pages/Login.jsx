@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-full w-full flex justify-center items-center absolute ">
+    <section className="absolute top-0 left-0 h-full w-full flex justify-center items-center">
       <NavLink
         to="/"
         type="button"
@@ -144,7 +144,7 @@ const Login = () => {
         </div>
         <p className="text-sm">@cc - 2024</p>
       </div>
-    </div>
+    </section>
   );
 };
 

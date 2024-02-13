@@ -39,7 +39,7 @@ const SignUpForm = () => {
                 name="username"
                 id="username"
                 required
-                placeholder="Your Username"
+                placeholder="Username"
               />
             </div>
             <div className="mt-4">

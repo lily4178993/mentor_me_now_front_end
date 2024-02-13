@@ -15,22 +15,22 @@ const mentorsListSlice = createSlice({
   name: 'mentorsList',
   initialState: {
     mentors: [],
-    status: 'idle',
-    error: null,
+    loading: false,
+    error: false,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchMentorsList.pending, (state) => {
-        state.status = 'loading';
+        state.loading = true;
       })
       .addCase(fetchMentorsList.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.loading = false;
         state.mentors = action.payload;
       })
-      .addCase(fetchMentorsList.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
+      .addCase(fetchMentorsList.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
       });
   },
 });
