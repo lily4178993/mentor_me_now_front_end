@@ -53,7 +53,7 @@ const Login = () => {
         <IoMdArrowRoundBack />
       </NavLink>
       <div className="absolute z-30 px-8 py-[3rem] text-white bg-primary-green/10 backdrop-blur-sm rounded-xl md:items-center md:rounded-none lg:rounded-md flex flex-col justify-center items-start">
-        <h1 className="text-3xl font-medium mb-4">Log in</h1>
+        <h1 className="text-3xl font-semibold text-gray-200 mb-4">Log in</h1>
         {authError && (
           <AlertStatus
             alertMessage={authError}
@@ -64,7 +64,7 @@ const Login = () => {
           <div className="mt-4">
             <input
               type="text"
-              className="rounded p-2 px-4 border"
+              className="rounded text-primary-black p-2 px-4 border"
               name="username"
               id="username"
               value={username}
@@ -84,14 +84,16 @@ const Login = () => {
           </div>
           <div className="text-center mt-4">
             <p>
-              Don't have an account?{' '}
+              Don&apos;t have an account?
+              {' '}
               <span>
                 <Link
                   to="/sign_up"
                   className="text-blue-500 cursor-pointer hover:underline"
                 >
                   Sign up
-                </Link>{' '}
+                </Link>
+                {' '}
               </span>
             </p>
           </div>

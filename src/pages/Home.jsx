@@ -32,7 +32,7 @@ const Home = () => {
     lazyLoad: true,
     className: 'center',
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 1,
     swipeToSlide: true,
     nextArrow: <SampleArrow className="bg-red-500" ariaLabel="Next" />,
     prevArrow: <SampleArrow ariaLabel="Previous" />,

@@ -14,22 +14,22 @@ const SplashScreen = () => (
             journey
             today
           </h1>
-          <p className="text-white text-base mt-8">
+          <p className="text-base text-gray-200 mt-8">
             Connect with experienced mentors
           </p>
         </header>
-        <div className="flex mt-4 justify-center items-center gap-4">
+        <div className="flex mt-4 text-gray-200 justify-center items-center gap-4">
           <Link
             to="login"
-            className="py-3 lg:py-3 px-8 font-medium bg-primary-blue text-white rounded"
+            className="py-2 lg:py-2 px-8 border-2 font-medium bg-primary-green border-primary-green text-gray-200 rounded"
           >
-            Log In
+            Sign in
           </Link>
           <Link
             to="/sign_up"
-            className="py-3 lg:py-3 px-8 font-medium bg-primary-blue text-white rounded"
+            className="py-2 lg:py-2 px-8 font-medium bg-transparent border-2 border-primary-green text-primary-green rounded"
           >
-            Sign up
+            Create account
           </Link>
         </div>
       </div>
