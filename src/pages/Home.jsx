@@ -7,8 +7,6 @@ import LoadingStatus from '../components/ux/LoadingStatus';
 import Header from '../components/ux/Header';
 import { fetchMentorsList } from '../redux/slices/mentors/mentorsListSlice';
 
-// import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-
 /**
  * Home component. Displays a list of mentors fetched from the API.
  * @returns {JSX.Element} The rendered Home component.

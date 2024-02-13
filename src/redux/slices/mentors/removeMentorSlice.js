@@ -31,14 +31,17 @@ const removeMentorSlice = createSlice({
     builder
       .addCase(removeMentor.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(removeMentor.fulfilled, (state) => {
         state.loading = false;
+        state.error = null;
         window.location.reload();
       })
       .addCase(removeMentor.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload;
+        state.error = action.error.message;
+        /* state.error = action.payload ? action.payload : 'An error occurred'; */
       });
   },
 });
