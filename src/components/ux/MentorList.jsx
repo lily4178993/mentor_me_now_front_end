@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-import Slider from 'react-slick';
 import MentorCard from '../MentorCard';
 
-const MentorList = ({ mentors, settings }) => (
+const MentorList = ({ mentors }) => (
   <div className="max-w-7xl border-orange-500">
     {/* eslint-disable-next-line react/jsx-props-no-spreading */}
     <Slider {...settings}>
@@ -28,7 +27,6 @@ MentorList.propTypes = {
       about: PropTypes.string,
     }),
   ).isRequired,
-  settings: PropTypes.shape({}).isRequired,
 };
 
 export default MentorList;
