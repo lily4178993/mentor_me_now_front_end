@@ -27,7 +27,7 @@ function App() {
   const isAuthenticated = useSelector((state) => state.authLogin.isAuthenticated);
 
   return (
-    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center border-blue-500">
+    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center border-blue-500 overflow-hidden">
       {isAuthenticated && <NavBar />}
       <section className="h-full lg:w-[80%] flex">
         <Routes>
