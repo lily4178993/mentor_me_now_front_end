@@ -51,7 +51,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="basis-[20%] h-full shadow-md flex flex-col justify-between items-center">
+    <nav className="w-0 lg:w-[20%] -translate-x-[100%] lg:translate-x-0 transition-all duration-500 h-full shadow-md flex flex-col justify-between items-center">
       <div className="flex w-full justify-center items-center">
         <img src={logo} alt="logo" className="logo" />
       </div>
