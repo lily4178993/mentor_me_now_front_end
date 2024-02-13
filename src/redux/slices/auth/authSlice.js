@@ -9,13 +9,13 @@ export const signIn = createAsyncThunk('auth/signIn', async (username) => {
     const response = await axios.post(`${BASE_URL}${ENDPOINT}`, { username });
     return response.data;
   } catch (err) {
-    throw new Error(`${err.response.status}: ${err.response.data}`);
+    throw new Error(`${err.response.loading}: ${err.response.data}`);
   }
 });
 
 const initialState = {
   user: null,
-  status: 'idle',
+  loading: false,
   error: null,
 };
 
@@ -26,14 +26,15 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(signIn.pending, (state) => {
-        state.status = 'loading';
+        state.loading = true;
       })
       .addCase(signIn.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.loading = false;
+        state.error = null;
         state.user = action.payload;
       })
       .addCase(signIn.rejected, (state, action) => {
-        state.status = 'failed';
+        state.loading = false;
         state.error = action.error.message;
       });
   },

@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SplashScreen from './pages/SplashScreen';
 import Login from './pages/Login';
-import SignInForm from './components/SignInForm';
+import SignUpForm from './components/SignUpForm';
 import Home from './pages/Home';
 import Reservations from './pages/Reservations';
 import ReserveMentor from './components/ReserveMentor';
@@ -41,7 +41,7 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<SignInForm />} />
+          <Route path="/sign_up" element={<SignUpForm />} />
           <Route
             path="/mentors"
             element={(
