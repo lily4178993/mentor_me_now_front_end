@@ -3,18 +3,18 @@ import MentorCard from '../MentorCard';
 
 const MentorList = ({ mentors }) => (
   <div className="max-w-7xl border-orange-500">
-    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-    <Slider {...settings}>
-      {mentors?.map((mentor) => (
-        <MentorCard
-          key={mentor.id}
-          id={mentor.id}
-          name={mentor.name}
-          image={mentor.photo_url}
-          about={mentor.about}
-        />
-      ))}
-    </Slider>
+    {/* NEW SLIDERR WILL BE ADDED HER... MAYBE */}
+    {/* <Slider> */}
+    {mentors?.map((mentor) => (
+      <MentorCard
+        key={mentor.id}
+        id={mentor.id}
+        name={mentor.name}
+        image={mentor.photo_url}
+        about={mentor.about}
+      />
+    ))}
+    {/* </Slider> */}
   </div>
 );
 
