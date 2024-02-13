@@ -1,13 +1,13 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import SignInForm from './components/SignInForm';
 import Home from './pages/Home';
 import Reservations from './pages/Reservations';
 import ReserveMentor from './components/ReserveMentor';
 import AddMentor from './components/AddMentor';
 import NavBar from './components/NavBar';
 import MentorDetails from './components/MentorDetails';
-import RemoveMentorsPage from './pages/RemoveMentorsPage';
+import RemoveMentorsPage from './pages/RemoveAMentor';
 import RemovedMentorsList from './pages/RemovedMentorsList';
+import SplashScreen from './pages/SplashScreen';
 
 function App() {
   const location = useLocation();
@@ -17,7 +17,7 @@ function App() {
       {location.pathname !== '/' && <NavBar />}
       <section className="h-full lg:w-[80%] flex">
         <Routes>
-          <Route path="/" element={<SignInForm />} />
+          <Route path="/" element={<SplashScreen />} />
           <Route path="/mentors" element={<Home />} />
           <Route path="/mentors/:id" element={<MentorDetails />} />
           <Route path="/reserveMentor" element={<ReserveMentor />} />

@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         pacifico: ['Pacifico', 'cursive'],
       },
+      backgroundImage: {
+        splash_bg: "url('/src/assets/splash-screen/splash_bg_2.jpg')",
+      },
     },
   },
   plugins: [],
