@@ -1,13 +1,27 @@
-import { NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../redux/slices/auth/loginSlice';
 import '../modules/NavBar.css';
-import logo from '../assets/logo.jpg';
-import twitter from '../assets/twitter.svg';
-import facebook from '../assets/facebook.svg';
-import google from '../assets/google.svg';
-import instagram from '../assets/instagram.svg';
-import pinterest from '../assets/pinterest.svg';
+import {
+  FaXTwitter, FaFacebookF, IoLogoGoogleplus, FaInstagram, FaPinterestP, logo,
+} from '../assets';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.authLogin.user);
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
+  const handleLogout = () => {
+    dispatch(clearUser());
+  };
+
   const navlinkData = [
     {
       id: 1,
@@ -55,12 +69,17 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <div className="social_media w-full mb-4">
-        <img src={twitter} alt="twitter logo" />
-        <img src={facebook} alt="facebook logo" />
-        <img src={google} alt="google logo" />
-        <img src={instagram} alt="instagram logo" />
-        <img src={pinterest} alt="pinterest logo" />
+      <div className="w-full mb-4 flex flex-col items-center">
+        <button type="button" onClick={handleLogout} className="py-2 px-4 border-b hover:bg-red-500 hover:text-white uppercase font-bold w-[95%] text-left -mr-8">
+          Logout
+        </button>
+        <div className="flex justify-center gap-2 mb-2 mt-4">
+          <NavLink to="https://github.com/martinkarugaba/mentor_me_now_front_end" target="_blank" className="hover:text-primary-green focus:text-primary-green"><FaXTwitter className="max-h-16" /></NavLink>
+          <NavLink to="https://github.com/martinkarugaba/mentor_me_now_front_end" target="_blank" className="hover:text-primary-green focus:text-primary-green"><FaFacebookF className="max-h-16" /></NavLink>
+          <NavLink to="https://github.com/martinkarugaba/mentor_me_now_front_end" target="_blank" className="hover:text-primary-green focus:text-primary-green"><IoLogoGoogleplus className="max-h-16" /></NavLink>
+          <NavLink to="https://github.com/martinkarugaba/mentor_me_now_front_end" target="_blank" className="hover:text-primary-green focus:text-primary-green"><FaInstagram className="max-h-16" /></NavLink>
+          <NavLink to="https://github.com/martinkarugaba/mentor_me_now_front_end" target="_blank" className="hover:text-primary-green focus:text-primary-green"><FaPinterestP className="max-h-16" /></NavLink>
+        </div>
       </div>
     </nav>
   );

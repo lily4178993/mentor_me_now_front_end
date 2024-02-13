@@ -7,7 +7,7 @@ import AlertStatus from '../components/AlertStatus';
 import ReservationItem from '../components/ReservationItem';
 
 const Reservations = () => {
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.authLogin.user);
   const mentors = useSelector((state) => state.mentorsList.mentors);
   const { loading, reservations, error } = useSelector((state) => state.reservationsList);
   const dispatch = useDispatch();
