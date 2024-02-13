@@ -6,7 +6,11 @@ const SplashScreen = () => (
       <div className="lg:w-auto text-center flex flex-col justify-center items-center gap-6">
         <header className="px-4">
           <h1 className="font-semibold mg:w-[10ch] capitalize leading-[3.5rem] lg:leading-[5rem] text-primary-orange text-5xl lg:text-7xl">
-            Begin your mentorship <br className="hidded lg:visible" /> journey
+            Begin your mentorship
+            {' '}
+            <br className="hidded lg:visible" />
+            {' '}
+            journey
             today
           </h1>
           <p className="text-white text-base mt-8">

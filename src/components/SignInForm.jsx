@@ -5,7 +5,7 @@ import { signIn } from '../redux/slices/auth/authSlice';
 const SignInForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const authError = useSelector((state) => state.auth.error);
+  const { loading, error: authError } = useSelector((state) => state.auth);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,7 +14,7 @@ const SignInForm = () => {
     const actionResult = await dispatch(signIn(username));
     if (signIn.fulfilled.match(actionResult)) {
       event.target.reset();
-      navigate('/mentors');
+      navigate('/login');
     }
   };
 
@@ -23,13 +23,9 @@ const SignInForm = () => {
       <div>
         <h1 className="text-3xl font-medium mb-4">Sign In</h1>
         {authError && (
-        <p className="text-red-500">
-          {authError}
-          {' '}
-          <br />
-          {' '}
-          The username you`ve selected is already taken. Please choose a different one.
-        </p>
+          <p className="text-red-500">
+            {authError.includes('422') ? 'The username you`ve selected is already taken. Please choose a different one.' : authError}
+          </p>
         )}
         <form onSubmit={handleSubmit}>
           <div className="mt-4">
@@ -46,7 +42,7 @@ const SignInForm = () => {
               type="submit"
               className="py-2 px-4 rounded bg-primary-green text-white"
             >
-              Sign in
+              {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
         </form>
