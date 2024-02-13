@@ -35,7 +35,6 @@ const removeMentorSlice = createSlice({
       })
       .addCase(removeMentor.fulfilled, (state) => {
         state.loading = false;
-        state.error = null;
         window.location.reload();
       })
       .addCase(removeMentor.rejected, (state, action) => {

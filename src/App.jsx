@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import SplashScreen from './pages/SplashScreen';
 import Login from './pages/Login';
+import SplashScreen from './pages/SplashScreen';
 import SignUpForm from './components/SignUpForm';
 import Home from './pages/Home';
 import Reservations from './pages/Reservations';
