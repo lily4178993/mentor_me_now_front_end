@@ -16,7 +16,7 @@ const RemovedMentorsList = () => {
   }, [dispatch]);
 
   return (
-    <section className="h-[100vh] overflow-y-scroll py-[5rem]">
+    <section className="h-[100vh] w-full overflow-y-scroll py-[5rem]">
       <header className="flex flex-col mb-16 justify-center gap-8 items-center">
         <h1 className="text-center font-semibold capitalize  text-4xl text-[#111111]">
           Removed Mentors
