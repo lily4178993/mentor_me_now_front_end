@@ -88,9 +88,11 @@ const NavBar = () => {
             >
               <NavLink
                 to={link.path}
-                className={({ isActive }) => (isActive
-                  ? 'active_box inline-block w-[100%] h-[100%] py-4 px-4'
-                  : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4')}
+                className={({ isActive }) =>
+                  isActive
+                    ? 'active_box inline-block w-[100%] h-[100%] py-4 px-4'
+                    : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4'
+                }
               >
                 {link.name}
               </NavLink>

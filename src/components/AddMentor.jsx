@@ -83,7 +83,7 @@ const AddMentor = () => {
   ];
 
   return (
-    <section className="flex flex-col justify-center items-center w-full">
+    <section className="absolute top-0 left-0 lg:static flex py-[3rem] md:py-[5rem] flex-col justify-center items-center w-full">
       <h2 className="text-center text-3xl mb-[3rem] text-primary-black font-medium">
         Become a Mentor
       </h2>
