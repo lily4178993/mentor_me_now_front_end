@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Spiral as Hamburger } from 'hamburger-react';
 import Login from './pages/Login';
 import SplashScreen from './pages/SplashScreen';
 import SignUpForm from './components/SignUpForm';
@@ -24,17 +25,20 @@ ProtectedRoute.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function App() {
+const App = () => {
   const isAuthenticated = useSelector(
     (state) => state.authLogin.isAuthenticated,
   );
 
   return (
-    <main className="w-full flex flex-col lg:flex-row lg:justify-end lg:items-center border-orange-500 overflow-hidden">
-      <div className="lg:w-[20%] -translate-x-[150%] lg:translate-x-0 transition-all duration-500">
+    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center overflow-hidden border-blue-500">
+      <div className="lg:w-[20%] -translate-x-[100%] lg:translate-x-0 transition-all duration-500 ">
         {isAuthenticated && <NavBar />}
       </div>
-      <section className="h-full relative md:w-screen lg:w-[80%] transition-all duration-500">
+      <section className="h-full lg:w-[80%] flex">
+        <div>
+          <Hamburger color="97BF0F" rounded />
+        </div>
         <Routes>
           <Route
             path="/"
@@ -46,64 +50,64 @@ function App() {
           <Route path="/sign_up" element={<SignUpForm />} />
           <Route
             path="/mentors"
-            element={(
+            element={
               <ProtectedRoute>
                 <Home />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/mentors/:id"
-            element={(
+            element={
               <ProtectedRoute>
                 <MentorDetails />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/reserveMentor"
-            element={(
+            element={
               <ProtectedRoute>
                 <ReserveMentor />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/reservations"
-            element={(
+            element={
               <ProtectedRoute>
                 <Reservations />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/addMentor"
-            element={(
+            element={
               <ProtectedRoute>
                 <AddMentor />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/remove_mentor"
-            element={(
+            element={
               <ProtectedRoute>
                 <RemoveMentorsPage />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/removed_mentors"
-            element={(
+            element={
               <ProtectedRoute>
                 <RemovedMentorsList />
               </ProtectedRoute>
-            )}
+            }
           />
         </Routes>
       </section>
     </main>
   );
-}
+};
 
 export default App;

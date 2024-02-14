@@ -28,9 +28,9 @@ const mentorsListSlice = createSlice({
         state.loading = false;
         state.mentors = action.payload;
       })
-      .addCase(fetchMentorsList.rejected, (state) => {
+      .addCase(fetchMentorsList.rejected, (state, action) => {
         state.loading = false;
-        state.error = true;
+        state.error = action.error.message;
       });
   },
 });

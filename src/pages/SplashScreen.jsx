@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SplashScreen = () => (
-  <section className="absolute top-0 left-0 bg-splash_bg bg-cover bg-center h-screen w-screen">
+  <section className="absolute top-0 border-orange-500 left-0 bg-splash_bg bg-cover bg-center h-full w-full">
     <section className="bg-[#111111]/60 w-full h-full flex justify-center items-center">
       <div className="lg:w-auto text-center flex flex-col justify-center items-center gap-6">
         <header className="px-4">

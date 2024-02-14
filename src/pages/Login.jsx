@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <section className="absolute top-0 left-0 h-full w-full flex justify-center items-center">
+    <section className="absolute top-0 left-0 h-screen w-screen flex justify-center items-center">
       <NavLink
         to="/"
         type="button"

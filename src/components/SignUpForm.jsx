@@ -35,7 +35,7 @@ const SignUpForm = () => {
             Create Account
           </h1>
           {authError && (
-            <p className="text-red-500">
+            <p className="text-red-600 max-w-[50ch] rounded absolute -mt-[10rem] top-0 bg-gray-100 p-4">
               {authError.includes('422')
                 ? 'The username you`ve selected is already taken. Please choose a different one.'
                 : authError}
@@ -62,7 +62,8 @@ const SignUpForm = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-200">
-                Already have an account?{' '}
+                Already have an account?
+                {' '}
                 <span>
                   <Link
                     to="/login"
