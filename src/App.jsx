@@ -50,59 +50,59 @@ const App = () => {
           <Route path="/sign_up" element={<SignUpForm />} />
           <Route
             path="/mentors"
-            element={
+            element={(
               <ProtectedRoute>
                 <Home />
               </ProtectedRoute>
-            }
+            )}
           />
           <Route
             path="/mentors/:id"
-            element={
+            element={(
               <ProtectedRoute>
                 <MentorDetails />
               </ProtectedRoute>
-            }
+            )}
           />
           <Route
             path="/reserveMentor"
-            element={
+            element={(
               <ProtectedRoute>
                 <ReserveMentor />
               </ProtectedRoute>
-            }
+            )}
           />
           <Route
             path="/reservations"
-            element={
+            element={(
               <ProtectedRoute>
                 <Reservations />
               </ProtectedRoute>
-            }
+            )}
           />
           <Route
             path="/addMentor"
-            element={
+            element={(
               <ProtectedRoute>
                 <AddMentor />
               </ProtectedRoute>
-            }
+            )}
           />
           <Route
             path="/remove_mentor"
-            element={
+            element={(
               <ProtectedRoute>
                 <RemoveMentorsPage />
               </ProtectedRoute>
-            }
+            )}
           />
           <Route
             path="/removed_mentors"
-            element={
+            element={(
               <ProtectedRoute>
                 <RemovedMentorsList />
               </ProtectedRoute>
-            }
+            )}
           />
         </Routes>
       </section>
