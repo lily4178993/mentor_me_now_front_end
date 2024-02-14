@@ -18,6 +18,7 @@
   - [Setup](#setup)
   - [Install](#install)
 - [Usage](#usage)
+- [Kanban Board](#kanban-board)
 - [Author](#author)
 - [Future Features](#future-features)
 - [Contributing](#contributing)
@@ -107,6 +108,11 @@ Open `http://localhost:5173/` to view it in your browser.
 
 Ensure the **MentorMeNow Backend** app is running to fetch data successfully. For details on running the **MentorMeNow Backend** app, refer to its [README](https://github.com/Ayokunnumi1/mentor_me_now_back_end).
 
+
+## Kanban Board <a name="kanban-board"></a>
+- [Kanban board link](https://github.com/users/martinkarugaba/projects/11/views/1)
+- [Kanban board initial state](./kabanboardinitialstate.png)
+- We are a team of 3 members as indicated in the authors section
 
 ## Author <a name="author"></a>
 

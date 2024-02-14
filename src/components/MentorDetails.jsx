@@ -93,7 +93,7 @@ const MentorDetails = () => {
           </section>
           <div className="h-auto mt-12 lg:mt-auto flex justify-center items-center">
             <Link
-              to="/mentors"
+              to="/reserveMentor"
               className="py-4 px-6 w-[200px] text-center rounded-full bg-primary-green text-white font-bold text-xl"
             >
               Reserve
