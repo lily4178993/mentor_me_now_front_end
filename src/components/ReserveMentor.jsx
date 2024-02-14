@@ -18,7 +18,8 @@ const ReserveMentor = () => {
     if (!userId) {
       return;
     }
-    if (startTime === '' || endTime === '' || date === '' || mentorId === '') return;
+    if (startTime === '' || endTime === '' || date === '' || mentorId === '')
+      return;
 
     const newReservation = {
       start_time: `${startTime}:00`,
@@ -36,10 +37,13 @@ const ReserveMentor = () => {
   };
 
   return (
-    <section className="absolute top-0 left-0 lg:left-1/2 lg:-translate-x-1/2 flex justify-center items-center w-full h-full">
+    <section className="absolute lg:static top-0 left-0 px-4 flex gap-[3rem] flex-col justify-center items-center w-full h-full">
+      <h1 className="text-3xl lg:text-4xl capitalize font-medium lg:font-semibold text-primary-black">
+        Reserve a mentor
+      </h1>
       <form
         onSubmit={handleSubmit}
-        className="max-w-sm w-full py-8 md:px-4 space-y-4 bg-white shadow-md rounded-lg"
+        className="max-w-md w-full py-8 px-4 lg:px-6 border space-y-4 bg-white shadow-md rounded-lg"
       >
         <label htmlFor="startTime" className="flex flex-col space-y-2">
           <span className="text-sm font-medium text-gray-700">Start Time</span>
