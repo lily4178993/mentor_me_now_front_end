@@ -1,12 +1,20 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { signIn } from '../redux/slices/auth/authSlice';
+import { clearError, signIn } from '../redux/slices/auth/authSlice';
 import { bgVideo } from '../assets';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error: authError } = useSelector((state) => state.auth);
+
+  useEffect(
+    () => () => {
+      dispatch(clearError());
+    },
+    [dispatch],
+  );
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,7 +31,9 @@ const SignUpForm = () => {
     <div className="h-screen absolute top-0 left-0 w-full bg-video flex justify-center items-center">
       <div className="bg-[#111111]/50 w-full h-full flex justify-center items-center z-10">
         <div className="backdrop-blur-lg rounded-md px-8 py-[3rem] max-w-xl flex flex-col justify-start items-center">
-          <h1 className="text-3xl text-gray-200 font-semibold mb-4">Create Account</h1>
+          <h1 className="text-3xl text-gray-200 font-semibold mb-4">
+            Create Account
+          </h1>
           {authError && (
             <p className="text-red-500">
               {authError.includes('422')
@@ -52,8 +62,7 @@ const SignUpForm = () => {
             </div>
             <div className="text-center mt-4">
               <p className="text-gray-200">
-                Already have an account?
-                {' '}
+                Already have an account?{' '}
                 <span>
                   <Link
                     to="/login"
@@ -62,7 +71,6 @@ const SignUpForm = () => {
                     Login
                   </Link>
                 </span>
-                {' '}
               </p>
             </div>
           </form>

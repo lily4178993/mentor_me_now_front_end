@@ -10,6 +10,7 @@ import removeMentorReducer from './slices/mentors/removeMentorSlice';
 import removedMentorsReducer from './slices/mentors/removedMentorsSlice';
 import createReservationReducer from './slices/reservations/createReservationSlice';
 import reservationsListReducer from './slices/reservations/reservationsListSlice';
+import navbarReducer from './slices/navbar/navbarSlice';
 
 const persistConfig = {
   key: 'root',
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   reservationsList: reservationsListReducer,
   removeMentor: removeMentorReducer,
   removedMentorsList: removedMentorsReducer,
+  navbar: navbarReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
