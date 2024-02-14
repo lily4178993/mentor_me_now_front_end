@@ -30,9 +30,11 @@ function App() {
   );
 
   return (
-    <main className="w-full h-auto md:h-[100vh] flex justify-end  items-center border-blue-500 overflow-hidden">
-      {isAuthenticated && <NavBar />}
-      <section className="h-full w-full lg:w-[80%] transition-all duration-500">
+    <main className="w-full flex flex-col lg:flex-row lg:justify-end lg:items-center border-orange-500 overflow-hidden">
+      <div className="lg:w-[20%] -translate-x-[150%] lg:translate-x-0 transition-all duration-500">
+        {isAuthenticated && <NavBar />}
+      </div>
+      <section className="h-full md:w-screen lg:w-[80%] transition-all duration-500">
         <Routes>
           <Route
             path="/"
@@ -44,59 +46,59 @@ function App() {
           <Route path="/sign_up" element={<SignUpForm />} />
           <Route
             path="/mentors"
-            element={(
+            element={
               <ProtectedRoute>
                 <Home />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/mentors/:id"
-            element={(
+            element={
               <ProtectedRoute>
                 <MentorDetails />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/reserveMentor"
-            element={(
+            element={
               <ProtectedRoute>
                 <ReserveMentor />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/reservations"
-            element={(
+            element={
               <ProtectedRoute>
                 <Reservations />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/addMentor"
-            element={(
+            element={
               <ProtectedRoute>
                 <AddMentor />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/remove_mentor"
-            element={(
+            element={
               <ProtectedRoute>
                 <RemoveMentorsPage />
               </ProtectedRoute>
-            )}
+            }
           />
           <Route
             path="/removed_mentors"
-            element={(
+            element={
               <ProtectedRoute>
                 <RemovedMentorsList />
               </ProtectedRoute>
-            )}
+            }
           />
         </Routes>
       </section>
