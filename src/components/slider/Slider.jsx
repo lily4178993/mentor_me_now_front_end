@@ -11,9 +11,9 @@ import 'swiper/css/scrollbar';
 
 const Slider = ({ mentors }) => (
   <>
-    <div className="relative border flex flex-col justify-center items-center w-full border-green-600 lg:px-0 lg:py-0">
+    <div className="relative flex flex-col justify-center items-center w-full border-green-600 lg:px-0 lg:py-0">
       <Swiper
-        className="w-full max-w-5xl border border-orange-500"
+        className="w-full max-w-[1024px] border-orange-500"
         modules={[Navigation, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
