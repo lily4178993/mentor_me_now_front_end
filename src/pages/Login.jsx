@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-full w-full flex justify-center items-center absolute ">
+    <section className="absolute top-0 left-0 h-screen w-screen flex justify-center items-center">
       <NavLink
         to="/"
         type="button"
@@ -89,7 +89,7 @@ const Login = () => {
               <span>
                 <Link
                   to="/sign_up"
-                  className="text-blue-500 cursor-pointer hover:underline"
+                  className="text-blue-500 cursor-pointer hover:underline focus:underline"
                 >
                   Sign up
                 </Link>
@@ -144,7 +144,7 @@ const Login = () => {
         </div>
         <p className="text-sm">@cc - 2024</p>
       </div>
-    </div>
+    </section>
   );
 };
 

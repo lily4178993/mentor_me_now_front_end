@@ -42,31 +42,76 @@ const AddMentor = () => {
   };
 
   const formFields = [
-    { label: 'Name', type: 'text', name: 'name' },
-    { label: 'Occupation', type: 'text', name: 'occupation' },
-    { label: 'About', type: 'text', name: 'about' },
-    { label: 'Hourly fee', type: 'number', name: 'hourly_fee' },
-    { label: 'Experience', type: 'number', name: 'year_of_experience' },
-    { label: 'Location', type: 'text', name: 'location' },
-    { label: 'Skills', type: 'text', name: 'skills' },
-    { label: 'Photo Url', type: 'text', name: 'photo_url' },
+    {
+      label: 'Name', type: 'text', name: 'name', placeholder: 'Name',
+    },
+    {
+      label: 'Occupation',
+      type: 'text',
+      name: 'occupation',
+      placeholder: 'Occupation: Web Developer',
+    },
+    {
+      label: 'About',
+      type: 'text',
+      name: 'about',
+      placeholder: 'A little about yourself',
+    },
+    {
+      label: 'Hourly fee',
+      type: 'number',
+      name: 'hourly_fee',
+      placeholder: 'Hourly rate',
+    },
+    {
+      label: 'Experience',
+      type: 'number',
+      name: 'year_of_experience',
+      placeholder: 'Years of Experience',
+    },
+    {
+      label: 'Location',
+      type: 'text',
+      name: 'location',
+      placeholder: 'London, UK',
+    },
+    {
+      label: 'Skills', type: 'text', name: 'skills', placeholder: 'Skills: HTML, CSS',
+    },
+    {
+      label: 'Photo Url',
+      type: 'text',
+      name: 'photo_url',
+      placeholder: 'https://example.png',
+    },
   ];
 
   return (
-    <section className="add_mentor_section">
-      <form className="add_mentor_form" onSubmit={handleSubmit}>
-        <h2>BE A MENTOR</h2>
+    <section className="absolute top-0 left-0 lg:static flex py-[3rem] md:py-[5rem] flex-col justify-center items-center w-full">
+      <h2 className="text-center text-3xl mb-[3rem] text-primary-black font-medium">
+        Become a Mentor
+      </h2>
+      <form
+        className="flex flex-col w-full max-w-lg border px-8 py-6 rounded-lg"
+        onSubmit={handleSubmit}
+      >
         {formFields.map((field) => (
           <MentorFormField
             key={field.name}
             label={field.label}
             type={field.type}
             name={field.name}
+            placeholder={field.placeholder}
             value={formData[field.name]}
             onChange={handleChange}
           />
         ))}
-        <button type="submit" className="submit-button">Submit</button>
+        <button
+          type="submit"
+          className="w-full rounded bg-primary-green text-white font-medium py-2 mt-4"
+        >
+          Submit
+        </button>
       </form>
     </section>
   );

@@ -64,17 +64,19 @@ const MentorDetails = () => {
   ];
 
   return (
-    <section className="flex flex-col justify-start items-start w-full h-[100vh] border-green-700">
-      <section className="flex h-[90%] w-full border-orange-500 justify-between items-start">
-        <div className="flex justify-center items-center basis-2/3 h-[100%]">
+    <section className="flex absolute top-0 left-0 lg:static flex-col justify-start items-start w-[100%] lg:h-[100vh] border-green-700">
+      <section className="flex flex-col justify-start items-center lg:flex-row lg:h-[90%] w-full border-orange-500 lg:justify-between lg:items-start">
+        {/* photo */}
+        <div className="flex justify-center items-center h-[300px] w-full lg:basis-2/3 lg:h-[100%]">
           <img
             src={photoUrl}
             alt="mentor"
             className="w-full h-full object-contain"
           />
         </div>
-        <div className="border-blue-500 flex flex-col justify-start h-full basis-1/3 pt-[5rem]">
-          <header className="px-4 text-right">
+        {/* details */}
+        <div className="border-blue-500 flex px-4 py-8  flex-col justify-start h-full basis-1/3 lg:pt-[5rem]">
+          <header className="px-4 text-center lg:text-right">
             <h2 className="text-4xl text-primary-black font-medium">{name}</h2>
             <p className="mt-4 text-gray-700">{about}</p>
           </header>
@@ -89,7 +91,7 @@ const MentorDetails = () => {
               </div>
             ))}
           </section>
-          <div className="h-auto mt-auto flex justify-center items-center">
+          <div className="h-auto mt-12 lg:mt-auto flex justify-center items-center">
             <Link
               to="/mentors"
               className="py-4 px-6 w-[200px] text-center rounded-full bg-primary-green text-white font-bold text-xl"

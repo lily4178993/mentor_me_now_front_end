@@ -1,8 +1,7 @@
 .add_mentor_form {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  position: absolute;
   top: 10px;
   left: 350px;
   font-weight: 700;

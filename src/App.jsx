@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import SplashScreen from './pages/SplashScreen';
 import Login from './pages/Login';
+import SplashScreen from './pages/SplashScreen';
 import SignUpForm from './components/SignUpForm';
 import Home from './pages/Home';
 import Reservations from './pages/Reservations';
@@ -24,15 +24,15 @@ ProtectedRoute.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function App() {
+const App = () => {
   const isAuthenticated = useSelector(
     (state) => state.authLogin.isAuthenticated,
   );
 
   return (
-    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center border-blue-500 overflow-hidden">
+    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center overflow-hidden border-blue-500">
       {isAuthenticated && <NavBar />}
-      <section className="h-full lg:w-[80%] flex">
+      <section className="h-full border-orange-500 lg:w-[80%] flex">
         <Routes>
           <Route
             path="/"
@@ -102,6 +102,6 @@ function App() {
       </section>
     </main>
   );
-}
+};
 
 export default App;
