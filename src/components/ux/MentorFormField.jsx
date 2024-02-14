@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MentorFormField = ({ label, type, name, value, onChange, placeholder }) => (
+const MentorFormField = ({
+  label, type, name, value, onChange, placeholder,
+}) => (
   <div className="form-row">
     <label htmlFor={name} className="form-label sr-only">
       {label}

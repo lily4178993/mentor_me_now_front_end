@@ -81,21 +81,27 @@ const NavBar = () => {
         </div>
         <ul className="navbar_links lg:pl-6 w-full">
           {navlinkData.map((link) => (
-            <li
-              key={link.id}
-              onClick={() => setOpen(false)}
-              className="border-b uppercase font-bold text-[#111111] p-0"
-            >
-              <NavLink
-                to={link.path}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'active_box inline-block w-[100%] h-[100%] py-4 px-4'
-                    : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4'
-                }
+            <li key={link.id}>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === 'Space') {
+                    setOpen(false);
+                  }
+                }}
+                tabIndex={0}
+                className="border-b uppercase font-bold text-[#111111] p-0"
               >
-                {link.name}
-              </NavLink>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) => (isActive
+                    ? 'active_box inline-block w-[100%] h-[100%] py-4 px-4'
+                    : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4')}
+                >
+                  {link.name}
+                </NavLink>
+              </button>
             </li>
           ))}
         </ul>

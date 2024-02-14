@@ -8,7 +8,7 @@ import RemoveMentorCard from '../components/RemoveMentorCard';
 const RemovedMentorsList = () => {
   const dispatch = useDispatch();
   const { mentors, loading, error } = useSelector(
-    (state) => state.removedMentorsList
+    (state) => state.removedMentorsList,
   );
 
   useEffect(() => {

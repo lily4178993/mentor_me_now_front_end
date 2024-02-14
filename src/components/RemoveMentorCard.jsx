@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeMentor } from '../redux/slices/mentors/removeMentorSlice';
 
-const RemoveMentorCard = ({ id, name, photoUrl, about, removed }) => {
+const RemoveMentorCard = ({
+  id, name, photoUrl, about, removed,
+}) => {
   const dispatch = useDispatch();
 
   return (

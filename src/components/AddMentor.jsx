@@ -42,7 +42,9 @@ const AddMentor = () => {
   };
 
   const formFields = [
-    { label: 'Name', type: 'text', name: 'name', placeholder: 'Name' },
+    {
+      label: 'Name', type: 'text', name: 'name', placeholder: 'Name',
+    },
     {
       label: 'Occupation',
       type: 'text',
@@ -73,7 +75,9 @@ const AddMentor = () => {
       name: 'location',
       placeholder: 'London, UK',
     },
-    { label: 'Skills', type: 'text', name: 'skills', placeholder: 'Skills: HTML, CSS' },
+    {
+      label: 'Skills', type: 'text', name: 'skills', placeholder: 'Skills: HTML, CSS',
+    },
     {
       label: 'Photo Url',
       type: 'text',
