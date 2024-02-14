@@ -64,7 +64,7 @@ const NavBar = () => {
       name: 'Remove Mentors',
     },
     {
-      id: 6,
+      id: 7,
       path: '/removed_mentors',
       name: 'Inactive Mentors',
     },
@@ -91,13 +91,13 @@ const NavBar = () => {
                   }
                 }}
                 tabIndex={0}
-                className="border-b uppercase font-bold text-[#111111] p-0"
+                className="border-b uppercase w-full text-left font-bold text-[#111111] p-0"
               >
                 <NavLink
                   to={link.path}
                   className={({ isActive }) => (isActive
                     ? 'active_box inline-block w-[100%] h-[100%] py-4 px-4'
-                    : 'inline-block w-[100%] h-[100%] bg-gray-50 py-4 px-4')}
+                    : 'inline-block w-full h-full bg-gray-50 py-4 px-4 hover:drop-shadow-md transition-all duration-300 hover:text-primary-green focus:text-primary-green focus:drop-shadow-md')}
                 >
                   {link.name}
                 </NavLink>
