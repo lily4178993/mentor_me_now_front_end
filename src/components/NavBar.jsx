@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Spiral as Hamburger } from 'hamburger-react';
 import { clearUser } from '../redux/slices/auth/loginSlice';
 import '../modules/NavBar.css';
 import {
@@ -16,12 +17,21 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.authLogin.user);
+  const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
     if (!user) {
       navigate('/');
     }
   }, [user, navigate]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.querySelector('nav').classList.remove('-translate-x-[100%]');
+    } else {
+      document.querySelector('nav').classList.add('-translate-x-[100%]');
+    }
+  }, [isOpen]);
 
   const handleLogout = () => {
     dispatch(clearUser());
@@ -57,7 +67,10 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="h-screen  shadow-md flex flex-col justify-between items-center">
+      <div className="fixed top-0 left-2 z-[99] block lg:hidden bg-white">
+        <Hamburger color="#97BF0F" rounded toggled={isOpen} toggle={setOpen} />
+      </div>
+      <nav className="h-screen  shadow-md flex flex-col justify-between items-center -translate-x-[100%] lg:translate-x-0 transition-all duration-500 z-[90] bg-white">
         <div className="flex w-full justify-center items-center">
           <img src={logo} alt="logo" className="logo" />
         </div>

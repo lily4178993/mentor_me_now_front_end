@@ -89,7 +89,7 @@ const Login = () => {
               <span>
                 <Link
                   to="/sign_up"
-                  className="text-blue-500 cursor-pointer hover:underline"
+                  className="text-blue-500 cursor-pointer hover:underline focus:underline"
                 >
                   Sign up
                 </Link>

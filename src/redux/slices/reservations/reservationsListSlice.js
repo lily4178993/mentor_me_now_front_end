@@ -22,7 +22,7 @@ const reservationsListSlice = createSlice({
     builder
       .addCase(fetchReservationsList.pending, (state) => {
         state.loading = true;
-        state.error = null;
+        state.error = false;
       })
       .addCase(fetchReservationsList.fulfilled, (state, action) => {
         state.loading = false;

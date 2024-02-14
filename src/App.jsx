@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Spiral as Hamburger } from 'hamburger-react';
 import Login from './pages/Login';
 import SplashScreen from './pages/SplashScreen';
 import SignUpForm from './components/SignUpForm';
@@ -32,13 +31,8 @@ const App = () => {
 
   return (
     <main className="w-full h-auto md:h-[100vh] flex justify-start items-center overflow-hidden border-blue-500">
-      <div className="lg:w-[20%] -translate-x-[100%] lg:translate-x-0 transition-all duration-500 ">
-        {isAuthenticated && <NavBar />}
-      </div>
+      {isAuthenticated && <NavBar />}
       <section className="h-full lg:w-[80%] flex">
-        <div>
-          <Hamburger color="97BF0F" rounded />
-        </div>
         <Routes>
           <Route
             path="/"

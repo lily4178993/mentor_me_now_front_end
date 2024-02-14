@@ -16,14 +16,18 @@ const RemovedMentorsList = () => {
   }, [dispatch]);
 
   return (
-    <section className="h-[100vh] px-4 absolute top-0 left-0 lg:static w-full overflow-y-scroll py-[5rem]">
+    <section className="w-full h-screen m-auto px-2 md:p-2 overflow-y-scroll">
+      {loading && (
+        <div className="absolute w-full h-full z-20 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center text-right">
+          <LoadingStatus />
+        </div>
+      )}
       <header className="flex flex-col mb-16 justify-center gap-8 items-center">
-        <h1 className="text-center font-semibold capitalize  text-4xl text-[#111111]">
+        <h1 className="text-center font-semibold capitalize  text-4xl text-primary-black">
           Removed Mentors
         </h1>
         <div className="w-[80px] border-b-4 border-primary-green" />
       </header>
-      {loading && <LoadingStatus />}
       {error && <ErrorStatus error={error} />}
       <section className="flex flex-wrap justify-center items-start gap-8 ">
         {mentors.map((mentor) => (

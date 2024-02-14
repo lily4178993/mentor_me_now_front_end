@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createReservation } from '../redux/slices/reservations/createReservationSlice';
-import LoadingStatus from './ux/LoadingStatus';
 import ErrorStatus from './ux/ErrorStatus';
 
 const ReserveMentor = () => {
@@ -37,10 +36,10 @@ const ReserveMentor = () => {
   };
 
   return (
-    <section className="flex justify-center items-center w-full min-h-screen">
+    <section className="absolute top-0 left-0 lg:left-1/2 lg:-translate-x-1/2 flex justify-center items-center w-full h-full">
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg w-full py-8 px-4 space-y-4 bg-white shadow-md rounded-lg"
+        className="max-w-sm w-full py-8 md:px-4 space-y-4 bg-white shadow-md rounded-lg"
       >
         <label htmlFor="startTime" className="flex flex-col space-y-2">
           <span className="text-sm font-medium text-gray-700">Start Time</span>
@@ -100,13 +99,8 @@ const ReserveMentor = () => {
           type="submit"
           className="px-6 py-2 mt-8 w-full bg-primary-green text-white rounded-md hover:bg-primary-green focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-opacity-50"
         >
-          Create Reservation
+          {loading ? 'Submiting...' : 'Create Reservation'}
         </button>
-        {loading && (
-          <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center">
-            <LoadingStatus />
-          </div>
-        )}
       </form>
       {error && <ErrorStatus error={error} />}
     </section>

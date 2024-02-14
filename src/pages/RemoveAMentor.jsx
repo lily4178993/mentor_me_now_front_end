@@ -5,26 +5,40 @@ import { fetchMentorsList } from '../redux/slices/mentors/mentorsListSlice';
 import ErrorStatus from '../components/ux/ErrorStatus';
 import LoadingStatus from '../components/ux/LoadingStatus';
 import RemoveMentorCard from '../components/RemoveMentorCard';
+import { IoMdArrowRoundBack } from '../assets';
 
 const RemoveAMentor = () => {
   const dispatch = useDispatch();
-  const { mentors, status, error } = useSelector((state) => state.mentorsList);
+  const { mentors, loading, error } = useSelector((state) => state.mentorsList);
 
   useEffect(() => {
     dispatch(fetchMentorsList());
   }, [dispatch]);
 
-  if (status === 'loading') {
-    return <LoadingStatus />;
-  }
   if (error) {
-    return <ErrorStatus error={error} />;
+    return (
+      <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center">
+        <ErrorStatus error={error} />
+      </div>
+    );
   }
 
   return (
-    <section className="py-[5rem] absolute top-0 left-0 lg:static border-orange-500 px-4 md:px-8 lg:px-[5rem] pb-[3rem] h-[100vh] w-[100%] overflow-y-scroll">
+    <section className="absolute top-0 right-0 w-full h-screen m-auto px-2 md:p-2 overflow-y-scroll">
+      {loading && (
+        <div className="absolute w-full h-full z-20 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center text-right">
+          <LoadingStatus />
+        </div>
+      )}
+      <Link
+        to="/reserveMentor"
+        type="button"
+        className="absolute z-50 top-4 left-8 text-primary-green hover:text-primary-orange focus:text-primary-green text-4xl"
+      >
+        <IoMdArrowRoundBack />
+      </Link>
       <header className="flex flex-col mb-16 justify-center gap-8 items-center">
-        <h1 className="text-center font-semibold capitalize  text-4xl text-[#111111]">
+        <h1 className="text-center font-semibold capitalize  text-4xl text-primary-black">
           Remove a mentor
         </h1>
         <div className="w-[80px] border-b-4 border-red-400" />

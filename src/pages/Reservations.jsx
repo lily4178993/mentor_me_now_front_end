@@ -20,16 +20,16 @@ const Reservations = () => {
 
   if (!user) {
     return (
-      <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center">
-        <LoadingStatus />
-      </div>
+      <h1 className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center text-primary-orange">
+        You Have to be logged in to view this page
+      </h1>
     );
   }
 
   return (
-    <section className="w-full h-full m-auto px-2 md:p-2 relative overflow-hidden">
+    <section className="absolute top-0 left-0 lg:static w-full h-screen m-auto px-2 md:p-2">
       {loading && (
-        <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center">
+        <div className="absolute w-full h-full z-20 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center text-right">
           <LoadingStatus />
         </div>
       )}
@@ -38,14 +38,14 @@ const Reservations = () => {
           <ErrorStatus error={error} />
         </div>
       )}
-      {reservations && reservations.length === 0 && (
-        <div className="absolute w-full h-full z-10 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center">
-          <AlertStatus alertMessage="You don't have any reservations yet." className="text-primary-orange text-2xl" />
-        </div>
-      )}
       <h1 className="text-center text-4xl font-bold underline p-4 mb-3">
         Your Appointments
       </h1>
+      {reservations && reservations.length === 0 && (
+        <div className="">
+          <AlertStatus alertMessage="You don't have any reservations yet." className="text-primary-orange text-2xl text-center" />
+        </div>
+      )}
       <ul className="flex flex-wrap justify-center gap-x-2 gap-y-3 md:gap-y-5">
         {reservations.map((reservation) => {
           const mentor = mentors.find((m) => m.id === reservation.mentor_id);

@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { clearError, signIn } from '../redux/slices/auth/authSlice';
-import { bgVideo } from '../assets';
+import {
+  FaFacebookF, FaInstagram, FaPinterestP, FaXTwitter, IoLogoGoogleplus, IoMdArrowRoundBack, bgVideo,
+} from '../assets';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -29,7 +31,14 @@ const SignUpForm = () => {
 
   return (
     <div className="h-screen absolute top-0 left-0 w-full bg-video flex justify-center items-center">
-      <div className="bg-[#111111]/50 w-full h-full flex justify-center items-center z-10">
+      <NavLink
+        to="/"
+        type="button"
+        className="absolute z-40 top-4 left-4 text-white hover:text-primary-green focus:text-primary-green text-4xl"
+      >
+        <IoMdArrowRoundBack />
+      </NavLink>
+      <div className="bg-black/70 w-full h-full flex justify-center items-center z-10">
         <div className="backdrop-blur-lg rounded-md px-8 py-[3rem] max-w-xl flex flex-col justify-start items-center">
           <h1 className="text-3xl text-gray-200 font-semibold mb-4">
             Create Account
@@ -55,7 +64,7 @@ const SignUpForm = () => {
             <div className="mt-4">
               <button
                 type="submit"
-                className="py-2 px-4 w-full rounded bg-primary-green text-white"
+                className="py-2 px-4 w-full rounded bg-primary-green hover:bg-primary-green/80 focus:bg-primary-green/80 text-white"
               >
                 {loading ? 'Signing up...' : 'Sign Up'}
               </button>
@@ -67,7 +76,7 @@ const SignUpForm = () => {
                 <span>
                   <Link
                     to="/login"
-                    className="text-blue-500 cursor-pointer hover:underline"
+                    className="text-blue-500 cursor-pointer hover:underline focus:underline"
                   >
                     Login
                   </Link>
@@ -86,6 +95,46 @@ const SignUpForm = () => {
         <source src={bgVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <div className="absolute z-40 bottom-2 text-white text-center">
+        <div className="flex justify-center gap-2 mb-2 ">
+          <NavLink
+            to="https://github.com/martinkarugaba/mentor_me_now_front_end"
+            target="_blank"
+            className="hover:text-primary-green focus:text-primary-green"
+          >
+            <FaXTwitter className="max-h-16" />
+          </NavLink>
+          <NavLink
+            to="https://github.com/martinkarugaba/mentor_me_now_front_end"
+            target="_blank"
+            className="hover:text-primary-green focus:text-primary-green"
+          >
+            <FaFacebookF className="max-h-16" />
+          </NavLink>
+          <NavLink
+            to="https://github.com/martinkarugaba/mentor_me_now_front_end"
+            target="_blank"
+            className="hover:text-primary-green focus:text-primary-green"
+          >
+            <IoLogoGoogleplus className="max-h-16" />
+          </NavLink>
+          <NavLink
+            to="https://github.com/martinkarugaba/mentor_me_now_front_end"
+            target="_blank"
+            className="hover:text-primary-green focus:text-primary-green"
+          >
+            <FaInstagram className="max-h-16" />
+          </NavLink>
+          <NavLink
+            to="https://github.com/martinkarugaba/mentor_me_now_front_end"
+            target="_blank"
+            className="hover:text-primary-green focus:text-primary-green"
+          >
+            <FaPinterestP className="max-h-16" />
+          </NavLink>
+        </div>
+        <p className="text-sm">@cc - 2024</p>
+      </div>
     </div>
   );
 };
