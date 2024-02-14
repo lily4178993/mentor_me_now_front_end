@@ -24,7 +24,7 @@ const RemoveAMentor = () => {
   }
 
   return (
-    <section className="absolute top-0 right-0 w-full h-screen m-auto px-2 md:p-2 overflow-y-scroll">
+    <section className="absolute lg:static top-0 right-0 w-full h-screen m-auto px-2 md:p-2 overflow-y-scroll py-8 lg:py-[3rem]">
       {loading && (
         <div className="absolute w-full h-full z-20 top-0 left-0 backdrop-blur-sm bg-primary-black/50 flex items-center justify-center text-right">
           <LoadingStatus />
@@ -44,14 +44,6 @@ const RemoveAMentor = () => {
         <div className="w-[80px] border-b-4 border-red-400" />
       </header>
       <section>
-        <div className="flex justify-end items-center mb-8 max-w-6xl px-[2rem]">
-          <Link
-            to="/removed_mentors"
-            className="bg-primary-blue font-medium text-white px-6 py-2 rounded"
-          >
-            Removed Mentors
-          </Link>
-        </div>
         <div className="flex flex-wrap justify-center items-start gap-8 ">
           {mentors.map((mentor) => (
             <RemoveMentorCard

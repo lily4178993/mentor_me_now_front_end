@@ -63,6 +63,11 @@ const NavBar = () => {
       path: '/remove_mentor',
       name: 'Remove Mentors',
     },
+    {
+      id: 6,
+      path: '/removed_mentors',
+      name: 'Inactive Mentors',
+    },
   ];
 
   return (

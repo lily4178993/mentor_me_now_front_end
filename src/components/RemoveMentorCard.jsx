@@ -2,14 +2,12 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeMentor } from '../redux/slices/mentors/removeMentorSlice';
 
-const RemoveMentorCard = ({
-  id, name, photoUrl, about, removed,
-}) => {
+const RemoveMentorCard = ({ id, name, photoUrl, about, removed }) => {
   const dispatch = useDispatch();
 
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center relative lg:w-auto p-4 rounded-md shadow-md w-full md:basis-[500px] gap-6">
+      <section className="flex flex-col md:max-w-lg md:flex-row items-center relative lg:w-auto p-4 rounded-md shadow-md w-full md:basis-[500px] gap-6">
         <div className="h-[200px] flex justify-center items-center relative">
           <div className="h-[130px] w-[130px] rounded-full bg-gray-100">
             <img
@@ -28,7 +26,7 @@ const RemoveMentorCard = ({
               className="bg-primary-green border-2 border-primary-green text-white mt-2 hover:bg-primary-green/80 hover:text-white transition-all duration-500  px-4 py-1 rounded"
               onClick={() => dispatch(removeMentor(id))}
             >
-              Restore
+              Activate
             </button>
           ) : (
             <button
@@ -36,7 +34,7 @@ const RemoveMentorCard = ({
               className="bg-transparent border-2 border-red-500 text-red-500 mt-2 hover:bg-red-500 hover:text-white transition-all duration-500  px-4 py-1 rounded"
               onClick={() => dispatch(removeMentor(id))}
             >
-              Remove
+              Deactivate
             </button>
           )}
         </div>
