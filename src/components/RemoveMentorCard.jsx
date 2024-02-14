@@ -8,7 +8,7 @@ const RemoveMentorCard = ({
   const dispatch = useDispatch();
 
   return (
-    <section className="flex items-center relative border w-auto p-4 rounded-md shadow-sm basis-[500px] gap-6">
+    <section className="flex flex-col md:flex-row items-center relative md:w-auto p-4 rounded-md shadow-md w-full md:basis-[500px] gap-6">
       <div className="h-[200px] flex justify-center items-center relative">
         <div className="h-[130px] w-[130px] rounded-full bg-gray-100">
           <img
@@ -18,9 +18,9 @@ const RemoveMentorCard = ({
           />
         </div>
       </div>
-      <div className="flex flex-col justify-start items-start">
+      <div className="flex flex-col items-center justify-start md:items-start">
         <h3 className="text-lg font-semibold text-[#111111]">{name}</h3>
-        <p className="text-gray-700">{about}</p>
+        <p className="text-gray-700 text-center md:text-left">{about}</p>
         {removed ? (
           <button
             type="button"

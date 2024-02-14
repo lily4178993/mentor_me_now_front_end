@@ -34,19 +34,19 @@ const MentorCard = ({
           <div className="flex h-auto items-center gap-4">
             <button
               type="button"
-              className="border text-xs h-[40px] w-[40px] text-primary-gray hover:text-primary-black focus:text-primary-black hover:animate-bounce focus:animate-bounce px-3 py-2 bg-transparent border-primary-gray rounded-full"
+              className="border text-xs h-[40px] w-[40px] text-primary-gray hover:text-primary-black focus:text-primary-black transition-all duration-500 focus:animate-bounce px-3 py-2 bg-transparent border-primary-gray rounded-full"
             >
               S
             </button>
             <button
               type="button"
-              className="border text-xs h-[40px] w-[40px] text-primary-gray hover:text-primary-black focus:text-primary-black hover:animate-bounce focus:animate-bounce px-3 py-2 bg-transparent border-primary-gray rounded-full"
+              className="border text-xs h-[40px] w-[40px] text-primary-gray hover:text-primary-black focus:text-primary-black transition-all duration-500 focus:animate-bounce px-3 py-2 bg-transparent border-primary-gray rounded-full"
             >
               V
             </button>
             <button
               type="button"
-              className="border text-xs h-[40px] w-[40px] text-primary-gray hover:text-primary-black focus:text-primary-black hover:animate-bounce focus:animate-bounce px-3 py-2 bg-transparent border-primary-gray rounded-full"
+              className="border text-xs h-[40px] w-[40px] text-primary-gray hover:text-primary-black focus:text-primary-black transition-all duration-500 focus:animate-bounce px-3 py-2 bg-transparent border-primary-gray rounded-full"
             >
               G
             </button>

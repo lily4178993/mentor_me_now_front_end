@@ -22,7 +22,7 @@ const RemoveAMentor = () => {
   }
 
   return (
-    <section className="py-[5rem] border-orange-500 px-[5rem] pb-[3rem] h-[100vh] w-[100%] border overflow-y-scroll">
+    <section className="py-[5rem] absolute top-0 left-0 lg:static border-orange-500 px-4 md:px-8 lg:px-[5rem] pb-[3rem] h-[100vh] w-[100%] overflow-y-scroll">
       <header className="flex flex-col mb-16 justify-center gap-8 items-center">
         <h1 className="text-center font-semibold capitalize  text-4xl text-[#111111]">
           Remove a mentor
