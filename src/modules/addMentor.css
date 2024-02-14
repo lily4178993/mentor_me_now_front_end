@@ -1,0 +1,103 @@
+.add_mentor_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  left: 350px;
+  font-weight: 700;
+  box-shadow: 0 0 10px 0 #97bf0f;
+  border-radius: 10px;
+  background: rgb(151, 191, 15);
+  background: linear-gradient(90deg, rgba(151, 191, 15, 1) 0%, rgba(24, 35, 48, 1) 100%);
+}
+
+.add_mentor_form input {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.add_mentor_form input:hover {
+  outline: 3px solid #c6ff0a;
+}
+
+.add_mentor_form input[type="decimal"],
+.add_mentor_form input[type="number"],
+.add_mentor_form input[type="text"] {
+  text-align: end;
+}
+
+.add_mentor_form button {
+  margin: 10px;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  outline: none;
+  background-color: #97bf0f;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add_mentor_label {
+  color: #fff;
+  padding: 10px;
+}
+
+.add_mentor_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.add_mentor_section h2 {
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: "Fira Sans", sans-serif;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add_mentor_form {
+    top: 20px;
+    left: 250px;
+    width: 500px;
+    height: 650px;
+    margin: 0 auto;
+  }
+
+  .add_mentor_form label {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .form-label {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .add_mentor_form {
+    left: 500px;
+  }
+}

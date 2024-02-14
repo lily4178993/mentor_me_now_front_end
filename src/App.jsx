@@ -1,35 +1,107 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import PropTypes from 'prop-types';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Login from './pages/Login';
+import SplashScreen from './pages/SplashScreen';
+import SignUpForm from './components/SignUpForm';
+import Home from './pages/Home';
+import Reservations from './pages/Reservations';
+import ReserveMentor from './components/ReserveMentor';
+import AddMentor from './components/AddMentor';
+import NavBar from './components/NavBar';
+import MentorDetails from './components/MentorDetails';
+import RemoveMentorsPage from './pages/RemoveAMentor';
+import RemovedMentorsList from './pages/RemovedMentorsList';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function ProtectedRoute({ children }) {
+  const isAuthenticated = useSelector(
+    (state) => state.authLogin.isAuthenticated,
+  );
+  return isAuthenticated ? children : <Navigate to="/login" />;
 }
 
-export default App
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+const App = () => {
+  const isAuthenticated = useSelector(
+    (state) => state.authLogin.isAuthenticated,
+  );
+
+  return (
+    <main className="w-full h-auto md:h-[100vh] flex justify-start items-center overflow-hidden border-blue-500">
+      {isAuthenticated && <NavBar />}
+      <section className="h-full border-orange-500 lg:w-[80%] flex">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              isAuthenticated ? <Navigate to="/mentors" /> : <SplashScreen />
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign_up" element={<SignUpForm />} />
+          <Route
+            path="/mentors"
+            element={(
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/mentors/:id"
+            element={(
+              <ProtectedRoute>
+                <MentorDetails />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/reserveMentor"
+            element={(
+              <ProtectedRoute>
+                <ReserveMentor />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/reservations"
+            element={(
+              <ProtectedRoute>
+                <Reservations />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/addMentor"
+            element={(
+              <ProtectedRoute>
+                <AddMentor />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/remove_mentor"
+            element={(
+              <ProtectedRoute>
+                <RemoveMentorsPage />
+              </ProtectedRoute>
+            )}
+          />
+          <Route
+            path="/removed_mentors"
+            element={(
+              <ProtectedRoute>
+                <RemovedMentorsList />
+              </ProtectedRoute>
+            )}
+          />
+        </Routes>
+      </section>
+    </main>
+  );
+};
+
+export default App;
