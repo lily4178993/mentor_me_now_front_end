@@ -13,14 +13,14 @@ const ReservationItem = ({ reservation, mentor }) => {
   }
 
   return (
-    <li className="min-w-64 bg-primary-green shadow-2xl rounded-md">
+    <li className="min-w-64 bg-primary-white shadow-md border rounded-md p-4">
       <div className="flex flex-col">
         <img
           src={mentor.photo_url}
           alt=""
           className="max-h-32 mx-auto"
         />
-        <div className="text-xs text-white p-2 relative">
+        <div className="text-xs text-gray-700 p-2 relative">
           <span className="text-xs text-center py-2 block">Meeting</span>
           <p className="flex justify-between">
             <span className="font-extrabold">With </span>
