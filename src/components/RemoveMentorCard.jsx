@@ -9,7 +9,7 @@ const RemoveMentorCard = ({
 
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center relative lg:w-auto p-4 rounded-md shadow-md w-full md:basis-[500px] gap-6 overflow-y-scroll">
+      <section className="flex flex-col md:flex-row items-center relative lg:w-auto p-4 rounded-md shadow-md w-full md:basis-[500px] gap-6">
         <div className="h-[200px] flex justify-center items-center relative">
           <div className="h-[130px] w-[130px] rounded-full bg-gray-100">
             <img

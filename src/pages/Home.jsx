@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   return (
-    <section className="h-screen absolute top-0 left-0 lg:static w-full py-[5rem]">
+    <section className="h-screen border-blue-500 absolute top-0 left-0 lg:static w-full py-[5rem]">
       <Header />
       <div className="mt-8">
         <Slider mentors={mentors} />

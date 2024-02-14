@@ -70,7 +70,7 @@ const NavBar = () => {
       <div className="fixed top-0 left-2 z-[99] block lg:hidden bg-white">
         <Hamburger color="#97BF0F" rounded toggled={isOpen} toggle={setOpen} />
       </div>
-      <nav className="h-screen  shadow-md flex flex-col justify-between items-center -translate-x-[100%] lg:translate-x-0 transition-all duration-500 z-[90] bg-white">
+      <nav className="h-screen w-[90%] md:w-[70%] lg:w-[20%] shadow-lg lg:shadow-mg flex flex-col justify-between items-center -translate-x-[100%] lg:translate-x-0 transition-all duration-500 z-[90] bg-white">
         <div className="flex w-full justify-center items-center">
           <img src={logo} alt="logo" className="logo" />
         </div>
@@ -78,6 +78,7 @@ const NavBar = () => {
           {navlinkData.map((link) => (
             <li
               key={link.id}
+              onClick={() => setOpen(false)}
               className="border-b uppercase font-bold text-[#111111] p-0"
             >
               <NavLink

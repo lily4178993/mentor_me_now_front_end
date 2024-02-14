@@ -32,7 +32,7 @@ const App = () => {
   return (
     <main className="w-full h-auto md:h-[100vh] flex justify-start items-center overflow-hidden border-blue-500">
       {isAuthenticated && <NavBar />}
-      <section className="h-full lg:w-[80%] flex">
+      <section className="h-full border-orange-500 lg:w-[80%] flex">
         <Routes>
           <Route
             path="/"
