@@ -1,7 +1,7 @@
-# README <a name="readme-top"></a>
+# MENTOR ME NOW APP<a name="readme-top"></a>
 
 <div align="center">
-  <img src="src/assets/logo2.jpg" alt="MentorMeNow logo" width="140"  height="auto" />
+  <img src="src/assets/mentor-me-now.gif" alt="MentorMeNow logo"/>
   <br/>
   <br/>
   <br/>
@@ -19,7 +19,7 @@
   - [Install](#install)
 - [Usage](#usage)
 - [Kanban Board](#kanban-board)
-- [Author](#author)
+- [Authors](#author)
 - [Future Features](#future-features)
 - [Contributing](#contributing)
 - [Show your support](#show-your-support)
@@ -114,7 +114,7 @@ Ensure the **MentorMeNow Backend** app is running to fetch data successfully. Fo
 - [Kanban board initial state](./kabanboardinitialstate.png)
 - We are a team of 3 members as indicated in the authors section
 
-## Author <a name="author"></a>
+## Authors <a name="author"></a>
 
 - Martin Karugaba - [@martinkarugaba](https://github.com/martinkarugaba)
 - Ayokunnumi Omololu - [@Ayokunnumi1](https://github.com/Ayokunnumi1)
