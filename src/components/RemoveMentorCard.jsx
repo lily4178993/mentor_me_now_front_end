@@ -8,7 +8,7 @@ const RemoveMentorCard = ({
   const dispatch = useDispatch();
 
   const handleRemoveMentor = (id) => {
-    console.log(`Removing mentor with ID: ${id}`);
+    // console.log(`Removing mentor with ID: ${id}`);
     dispatch(removeMentor(id));
   };
 
