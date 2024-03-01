@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/api/v1';
+const API_URL = 'https://mentor-me-now-back-end.onrender.com/api/v1';
 
 export const fetchMentorsList = createAsyncThunk(
   'mentor/fetchMentorsList',

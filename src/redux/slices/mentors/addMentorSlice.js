@@ -7,7 +7,7 @@ const initialState = {
   error: '',
 };
 
-const baseUrl = 'http://127.0.0.1:3000';
+const baseUrl = 'https://mentor-me-now-back-end.onrender.com';
 
 export const addMentorToServer = createAsyncThunk(
   'addMentor/addToServer',
