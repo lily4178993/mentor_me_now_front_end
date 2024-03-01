@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const BASE_URL = 'http://127.0.0.1:3000';
+const BASE_URL = 'https://mentor-me-now-back-end.onrender.com';
 const ENDPOINT = '/api/v1/users';
 
 export const signIn = createAsyncThunk('auth/signIn', async (username) => {
